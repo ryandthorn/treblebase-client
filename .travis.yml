@@ -2,4 +2,11 @@ language: node_js
 node_js: node
 cache:
   directories:
-    - node_modules
+  - node_modules
+deploy:
+  provider: heroku
+  api_key:
+    secure: Y4Df2L3XQ/qD6DS3RLqNAp3ZP8h5Lk52eJskfM9p7H+OHQq4co9vqNBNgyM84OdvLA1oSXvU/USpTRjZBq2p4QySOgeFJmMRDhdwPEqLBEq2P+LTaJuLuzhUlMi00K1CLYW6LX3Ge3m8M2HXlqY7FUn88xMUSFUph7acDs/1RgiG2SFPezD5DCDLBXxrPAtHW1eizQ9qQMlXIjVa1KsD5PWL2EL+a6W3q9pD2M1grpbXqC+LxRlesX+SUFyvQDWD7JYtysHIOxl5SHRa44qLScP4iE+h+wwd4QTHv2ITrvVohAhgeQdrkxsDgh1KvnHkdnt9D8MycpZG1qYfvDhUmHs5z/SPb26PQaHaQ5DUzrFLwNcFIVOdre7nK2kGIO+PRJP1f1XoOsQttWhIlzGqM6Elx+hj7rtwax59cdp0wmzKnp2EnNndg30QXGjjw8gZCl8CrBGiz85wnt9zUaKQf0ECyja3YGJxxsESW/vwMOdi7IzL4tZrb/uCy0ViknaAiIngAkV/5YikcBOr+W1DXIA8LeYjIDbjdEUDmd+Njk9hd0Pda3QAWGp2iWNEx1aaxGjR87fPE0q4kNqypAiWDVz7Msq2kN1yZStyUJzr2rdDOmXPKKCmO5mAXaBP363nLiVN6eUaqkH3XkGasFlNVzxtWk6RTu5fY6CxN+UHpX4=
+  app: treblebase-client
+  on:
+    repo: ryandthorn/treblebase-client
