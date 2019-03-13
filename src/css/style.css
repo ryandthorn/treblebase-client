@@ -38,3 +38,27 @@ section:nth-child(even) {
 .form__login {
   max-width: fit-content;
 }
+
+/* Header */
+.nav__no-auth {
+  background-color: #aaa;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.nav__no-auth p {
+  padding-right: 0.5rem;
+  text-align: right;
+}
+
+.nav__auth {
+  align-items: center;
+  background-color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.nav__auth input {
+  padding: 0.25rem;
+}

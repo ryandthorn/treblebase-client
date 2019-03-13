@@ -1,9 +1,15 @@
 import React, { Component } from "react";
+import Header from "./Header";
 import Landing from "./Landing";
 
 class App extends Component {
   render() {
-    return <Landing />;
+    return (
+      <div>
+        <Header loggedIn="false" />
+        <Landing />
+      </div>
+    );
   }
 }
 
