@@ -1,3 +1,3 @@
 const initialState = {};
 
-export const reducer = (state = initialState, action) => state;
+export const indexReducer = (state = initialState, action) => state;

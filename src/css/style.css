@@ -1,0 +1,40 @@
+/* General */
+
+.hidden {
+  display: none;
+}
+
+.inline-center {
+  text-align: center;
+}
+
+.block-center {
+  margin: 0 auto;
+}
+
+fieldset {
+  border: none;
+}
+
+/* Landing */
+section {
+  min-height: 150px;
+  padding: 6% 0;
+  background-color: #ccc;
+}
+
+section:nth-child(even) {
+  background-color: #eee;
+}
+
+.hero * {
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3em;
+}
+
+.form__login {
+  max-width: fit-content;
+}

@@ -4,7 +4,8 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
-import "./normalize.css";
+import "./css/normalize.css";
+import "./css/style.css";
 
 import App from "./components/App";
 
