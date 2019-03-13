@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+
 import Header from "./Header";
 import Landing from "./Landing";
+import Footer from "./Footer";
 
 class App extends Component {
   render() {
@@ -8,6 +10,7 @@ class App extends Component {
       <div>
         <Header loggedIn="false" />
         <Landing />
+        <Footer />
       </div>
     );
   }
