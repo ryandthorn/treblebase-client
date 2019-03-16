@@ -42,13 +42,17 @@ section:nth-child(even) {
 /* Header */
 .nav__no-auth {
   background-color: #aaa;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
   margin: 0;
   padding: 0.5em;
 }
 
-.nav__no-auth p {
-  padding-right: 0.5rem;
+.nav__no-auth * {
+  padding-right: 1em;
   text-align: right;
+  display: block;
 }
 
 .nav__auth {
@@ -94,6 +98,32 @@ section:nth-child(even) {
   margin: 1rem auto;
   padding: 1rem;
   width: 80%;
+}
+
+/* Registration */
+.form__registration {
+  margin: 5rem auto;
+  max-width: fit-content;
+}
+
+.form__registration fieldset {
+  background-color: lightgray;
+  border: none;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.form__registration input {
+  max-width: 150px;
+}
+
+.wrap__field {
+  padding: .5rem;
+  text-align: right;
+}
+
+.wrap__button {
+  text-align: center;
 }
 
 /* Footer */

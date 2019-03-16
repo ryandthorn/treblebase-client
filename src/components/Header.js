@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 
 export default function Header(props) {
   // logged in
@@ -19,9 +20,13 @@ export default function Header(props) {
   } else {
     // not logged in
     return (
-      <nav className="nav__no-auth">
-        <p>Sign up | Log in</p>
-      </nav>
+      <Router>
+        <nav className="nav__no-auth">
+          <Link to="/register">Sign Up</Link>
+          {/* <Link to="/login">Log in</Link> */}
+        </nav>
+      </Router>
+
     );
   }
 }

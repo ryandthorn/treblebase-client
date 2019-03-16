@@ -5,6 +5,7 @@ import Header from "./Header";
 import Landing from "./Landing";
 import Footer from "./Footer";
 import Dashboard from "./Dashboard";
+import Registration from "./Registration";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         <Header loggedIn="false" />
         <Route exact path="/" component={Landing} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/register" component={Registration} />
         <Footer />
       </div>
     </Router>
