@@ -17,6 +17,7 @@ fieldset {
 }
 
 /* Landing */
+
 section {
   min-height: 150px;
   padding: 6% 0;
@@ -34,6 +35,8 @@ section:nth-child(even) {
 .hero h1 {
   font-size: 3em;
 }
+
+/* Login */
 
 .form__login {
   max-width: fit-content;

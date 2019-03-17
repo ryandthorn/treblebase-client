@@ -1,4 +1,5 @@
 import React from "react";
+import Login from './Login';
 
 export default function Landing() {
   return (
@@ -20,27 +21,7 @@ export default function Landing() {
 
       <section className="login inline-center">
         <h3>Already a member?</h3>
-        <form className="form__login block-center">
-          <fieldset>
-            <legend className="hidden">Log in</legend>
-            <div className="wrap__field">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                name="username"
-                placeholder="Username or email"
-                required
-              />
-            </div>
-            <div className="wrap__field">
-              <label htmlFor="password">Password</label>
-              <input type="password" name="password" required />
-            </div>
-            <button type="submit" className="button--small">
-              Log in
-            </button>
-          </fieldset>
-        </form>
+        <Login />
       </section>
     </section>
   );

@@ -23,7 +23,7 @@ export default function Header(props) {
       <Router>
         <nav className="nav__no-auth">
           <Link to="/register">Sign Up</Link>
-          {/* <Link to="/login">Log in</Link> */}
+          <Link to="/login">Log in</Link>
         </nav>
       </Router>
 
