@@ -1,9 +1,10 @@
 import React from "react";
-import Login from './Login';
+import Login from '../Login/Login';
+import './Landing.css';
 
 export default function Landing() {
   return (
-    <section className="wrap__Landing">
+    <section className="landing">
       <section className="hero inline-center">
         <h1>TrebleBase</h1>
         <h2>Connecting classical musicians to performance opportunities</h2>

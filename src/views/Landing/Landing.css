@@ -1,0 +1,17 @@
+.landing section {
+  min-height: 150px;
+  padding: 6% 0;
+  background-color: #ccc;
+}
+
+.landing section:nth-child(even) {
+  background-color: #eee;
+}
+
+.hero * {
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 3em;
+}

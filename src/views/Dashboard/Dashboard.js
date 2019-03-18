@@ -1,8 +1,9 @@
 import React from "react";
+import "./Dashboard.css";
 
 export default function Dashboard() {
   return (
-    <div>
+    <div className="dashboard">
       <section className="dashboard-navigation">
         <div className="active tab">Browse</div>
         <div className="tab">Search</div>

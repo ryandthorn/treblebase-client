@@ -1,0 +1,14 @@
+.nav__no-auth {
+  background-color: #aaa;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0.5em;
+}
+
+.nav__no-auth * {
+  padding-right: 1em;
+  text-align: right;
+  display: block;
+}

@@ -1,0 +1,11 @@
+.nav__auth {
+  align-items: center;
+  background-color: #aaa;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em;
+}
+
+.nav__auth input {
+  padding: 0.25rem;
+}

@@ -1,0 +1,24 @@
+.form__registration {
+  margin: 5rem auto;
+  max-width: fit-content;
+}
+
+.form__registration fieldset {
+  background-color: lightgray;
+  border: none;
+  border-radius: 10px;
+  margin-top: 2rem;
+}
+
+.form__registration input {
+  max-width: 150px;
+}
+
+.wrap__field {
+  padding: .5rem;
+  text-align: right;
+}
+
+.wrap__button {
+  text-align: center;
+}
