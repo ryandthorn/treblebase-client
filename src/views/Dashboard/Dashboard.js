@@ -5,8 +5,7 @@ export default function Dashboard() {
   return (
     <div className="dashboard">
       <section className="dashboard-navigation">
-        <div className="active tab">Browse</div>
-        <div className="tab">Search</div>
+        <div className="active tab">Opportunities</div>
         <div className="tab">Profile</div>
       </section>
       <h1 className="inline-center">Hello Ryan!</h1>

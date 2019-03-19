@@ -1,6 +1,6 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './AuthBar.css';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./AuthBar.css";
 
 export default function AuthBar() {
   return (

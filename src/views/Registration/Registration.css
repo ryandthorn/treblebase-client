@@ -15,10 +15,14 @@
 }
 
 .wrap__field {
-  padding: .5rem;
+  padding: 0.5rem;
   text-align: right;
 }
 
 .wrap__button {
   text-align: center;
+}
+
+.form__registration a {
+  text-decoration: none;
 }

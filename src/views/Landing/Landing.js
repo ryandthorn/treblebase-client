@@ -1,6 +1,7 @@
 import React from "react";
-import Login from '../Login/Login';
-import './Landing.css';
+import Login from "../Login/Login";
+import "./Landing.css";
+import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
@@ -17,7 +18,9 @@ export default function Landing() {
 
       <section className="register inline-center">
         <h2>Become a part of our community today!</h2>
-        <button className="button--large">Sign up for TrebleBase</button>
+        <Link to="/register" class="Link__register">
+          Sign up for TrebleBase
+        </Link>
       </section>
 
       <section className="login inline-center">

@@ -15,3 +15,16 @@
 .hero h1 {
   font-size: 3em;
 }
+
+.Link__register {
+  background-color: #eee;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  padding: 1em;
+  text-decoration: none;
+  width: fit-content;
+}

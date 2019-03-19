@@ -1,5 +1,5 @@
-import React from 'react';
-import './Login.css';
+import React from "react";
+import "./Login.css";
 
 export default function Login() {
   return (
@@ -25,4 +25,4 @@ export default function Login() {
       </fieldset>
     </form>
   );
-};
+}
