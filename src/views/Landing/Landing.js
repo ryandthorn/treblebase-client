@@ -18,7 +18,7 @@ export default function Landing() {
 
       <section className="register inline-center">
         <h2>Become a part of our community today!</h2>
-        <Link to="/register" class="Link__register">
+        <Link to="/register" className="Link__register">
           Sign up for TrebleBase
         </Link>
       </section>

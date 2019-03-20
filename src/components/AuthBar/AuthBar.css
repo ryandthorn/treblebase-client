@@ -1,0 +1,42 @@
+.authbar {
+  align-items: center;
+  background-color: #71f6b8;
+  border-bottom: 1px solid grey;
+  display: flex;
+  height: 15vh;
+  width: 100%;
+}
+
+.logo {
+  background-color: #eee;
+  border: 1px solid grey;
+  flex: 1;
+  height: 80%;
+  margin: 1rem;
+}
+
+.logo-ph {
+  padding-left: 1em;
+}
+
+.register--login {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-wrap: none;
+  justify-content: center;
+  text-align: center;
+}
+
+.register--login a {
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  color: black;
+  display: inline-block;
+  flex: 1;
+  margin-right: .25rem;
+  padding: .5em .25em;
+  text-align: center;
+  text-decoration: none;
+}

@@ -4,9 +4,14 @@ import "./AuthBar.css";
 
 export default function AuthBar() {
   return (
-    <nav className="nav__no-auth">
-      <Link to="/register">Sign Up</Link>
-      <Link to="/login">Log in</Link>
-    </nav>
+    <section className="authbar">
+      <section className="logo">
+        <div className="logo-ph">Logo</div>
+      </section>
+      <nav className="register--login">
+        <Link to="/register">Sign Up</Link>
+        <Link to="/login">Log in</Link>
+      </nav>
+    </section>
   );
 }
