@@ -4,6 +4,7 @@ import "./App.css";
 
 import Landing from "../../views/Landing/Landing";
 import Dashboard from "../../views/Dashboard/Dashboard";
+import Profile from "../../views/Profile/Profile";
 import Registration from "../../views/Registration/Registration";
 import Login from "../../views/Login/Login";
 import AuthBar from "../AuthBar/AuthBar";
@@ -17,6 +18,7 @@ export default function App() {
         <header>
           <Switch>
             <Route path="/dashboard" component={NavBar} />
+            <Route path="/profile" component={NavBar} />
             <Route path="/" component={AuthBar} />
           </Switch>
         </header>
@@ -24,6 +26,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Landing} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/profile" component={Profile} />
             <Route exact path="/register" component={Registration} />
             <Route exact path="/login" component={Login} />
             <Route component={NoMatch} />

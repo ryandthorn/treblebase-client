@@ -1,12 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./Dashboard.css";
 
 export default function Dashboard() {
   return (
     <div className="dashboard">
       <section className="dashboard-navigation">
-        <div className="active tab">Opportunities</div>
-        <div className="tab">Profile</div>
+        <div className="active tab">
+          <Link to="/dashboard">Opportunities</Link>
+        </div>
+        <div className="tab">
+          <Link to="/profile">Profile</Link>
+        </div>
       </section>
       <h1 className="inline-center">Hello Ryan!</h1>
       <h2 className="block-center">

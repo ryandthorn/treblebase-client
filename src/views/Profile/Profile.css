@@ -1,6 +1,31 @@
-a {
+.profile a {
   color: black;
   text-decoration: none;
+}
+
+.profile legend {
+  font-size: larger;
+  font-weight: bold;
+}
+
+.profile input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem;
+}
+
+.profile__edit {
+  padding: 1rem;
+}
+
+.profile fieldset {
+  margin: 1rem auto;
+  padding: 0;
+}
+
+.profile p label {
+  display: inline-block;
+  width: 75px;
 }
 
 .dashboard-navigation {
@@ -26,10 +51,6 @@ a {
   cursor: pointer;
 }
 
-.card-wrapper {
-  background: #eee;
-  border-radius: 5%;
-  margin: 1rem auto;
-  padding: 1rem;
-  width: 80%;
+.profile__edit h1 {
+  text-align: center;
 }
