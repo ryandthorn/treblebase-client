@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+import FilterPosts from "../../components/FilterPosts/FilterPosts";
 import { fetchPosts } from "../../actions";
 import "./Dashboard.css";
 
@@ -31,11 +32,7 @@ export class Dashboard extends React.Component {
             <Link to="/profile">Profile</Link>
           </div>
         </section>
-        <h1 className="inline-center">Hello Ryan!</h1>
-        <h2 className="block-center">
-          Here are some recently-posted opportunities in your area:
-        </h2>
-
+        <FilterPosts />
         <section className="feed">{posts}</section>
       </div>
     );
