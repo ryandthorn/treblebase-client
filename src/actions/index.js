@@ -17,3 +17,29 @@ export const fetchPostsSuccess = posts => ({
   type: FETCH_POSTS_SUCCESS,
   posts
 });
+
+export const USER_LOGIN = "USER_LOGIN";
+export const userLogin = userInfo => dispatch => {
+  console.log(JSON.stringify(userInfo));
+  fetch(`${API_BASE_URL}/auth/login`, {
+    method: "POST",
+    body: JSON.stringify(userInfo),
+    headers: { "Content-Type": "application/json" }
+  })
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    })
+    .then(resJson => {
+      dispatch(userLoginSuccess(resJson.authToken));
+    })
+    .catch(err => console.error(err));
+};
+
+export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
+export const userLoginSuccess = jwt => ({
+  type: USER_LOGIN_SUCCESS,
+  jwt
+});

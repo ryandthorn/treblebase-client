@@ -17,9 +17,7 @@ export class Dashboard extends React.Component {
         <h3 className="post__company">{post.company}</h3>
         <h3 className="post__location">{post.location}</h3>
         <p className="post__content">{post.content}</p>
-        <div className="inline-center">
-          <button className="btn__details">View details</button>
-        </div>
+        <button className="btn__details">View details</button>
       </div>
     ));
     return (
