@@ -20,10 +20,10 @@ export const fetchPostsSuccess = posts => ({
 
 export const USER_LOGIN = "USER_LOGIN";
 export const userLogin = userInfo => dispatch => {
-  console.log(JSON.stringify(userInfo));
-  fetch(`${API_BASE_URL}/auth/login`, {
+  const data = JSON.stringify({ email: userInfo.email, password: userInfo.password })
+  return fetch(`${API_BASE_URL}/auth/login`, {
     method: "POST",
-    body: JSON.stringify(userInfo),
+    body: data,
     headers: { "Content-Type": "application/json" }
   })
     .then(res => {

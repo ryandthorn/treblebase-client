@@ -7,14 +7,14 @@ export class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: null,
+      email: null,
       password: null
     };
   }
 
-  updateUsername(val) {
+  updateEmail(val) {
     this.setState({
-      username: val
+      email: val
     });
   }
 
@@ -38,13 +38,13 @@ export class Login extends React.Component {
         <fieldset>
           <legend className="hidden">Log in</legend>
           <div className="wrap__field">
-            <label htmlFor="username">Username</label>
+            <label htmlFor="email">Email</label>
             <input
               type="text"
-              name="username"
-              placeholder="Username or email"
+              name="email"
+              placeholder="Enter email address"
               required
-              onChange={e => this.updateUsername(e.target.value)}
+              onChange={e => this.updateEmail(e.target.value)}
             />
           </div>
           <div className="wrap__field">
@@ -71,7 +71,7 @@ Login.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  username: state.username,
+  email: state.email,
   password: state.password
 });
 
