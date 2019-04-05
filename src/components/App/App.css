@@ -8,14 +8,14 @@
   display: none;
 }
 
-.inline-center {
-  text-align: center;
-}
-
-.block-center {
-  margin: 0 auto;
-}
-
 fieldset {
   border: none;
+}
+
+:root {
+  --color-teal: rgb(113, 246, 184);
+  --color-pink: rgb(253, 133, 162);
+  --color-yellow: rgb(254, 196, 0);
+  --color-blue: rgb(31, 73, 191);
+  --color-grey: rgb(68, 68, 68);
 }
