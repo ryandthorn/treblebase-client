@@ -12,19 +12,14 @@ export class Login extends React.Component {
     };
   }
 
-  updateEmail(val) {
+  updateField(target) {
+    const key = target.id;
     this.setState({
-      email: val
+      [key]: target.value
     });
   }
 
-  updatePassword(val) {
-    this.setState({
-      password: val
-    });
-  }
-
-  submitLogin(e) {
+  handleSubmit(e) {
     e.preventDefault();
     this.props.dispatch(userLogin(this.state));
   }
@@ -33,7 +28,7 @@ export class Login extends React.Component {
     return (
       <form
         className="form__login block-center"
-        onSubmit={e => this.submitLogin(e)}
+        onSubmit={e => this.handleSubmit(e)}
       >
         <fieldset>
           <legend className="hidden">Log in</legend>
@@ -42,9 +37,10 @@ export class Login extends React.Component {
             <input
               type="text"
               name="email"
+              id="email"
               placeholder="Enter email address"
               required
-              onChange={e => this.updateEmail(e.target.value)}
+              onChange={e => this.updateField(e.target)}
             />
           </div>
           <div className="wrap__field">
@@ -52,8 +48,9 @@ export class Login extends React.Component {
             <input
               type="password"
               name="password"
+              id="password"
               required
-              onChange={e => this.updatePassword(e.target.value)}
+              onChange={e => this.updateField(e.target)}
             />
           </div>
           <button type="submit" className="button--small">

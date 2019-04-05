@@ -1,10 +1,31 @@
 import React from "react";
+import { connect } from "react-redux";
+import { userRegistration } from "../../actions";
 import "./Registration.css";
 
-export default class Registration extends React.Component {
+export class Registration extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      firstName: null,
+      lastName: null,
+      email: null,
+      password: null,
+      confirmPassword: null
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.history.push(`/dashboard`);
+    this.props.dispatch(userRegistration(this.state));
+    // this.props.history.push(`/dashboard`);
+  }
+
+  updateField(target) {
+    const key = target.id;
+    this.setState({
+      [key]: target.value
+    });
   }
 
   render() {
@@ -20,29 +41,40 @@ export default class Registration extends React.Component {
               Please enter your information below
             </legend>
             <div className="wrap__field">
-              <label htmlFor="firstname">First name</label>
-              <input type="text" name="firstname" />
+              <label htmlFor="firstName">First name</label>
+              <input
+                type="text" name="firstName" id="firstName"
+                onChange={e => this.updateField(e.target)} />
             </div>
             <div className="wrap__field">
-              <label>Last name</label>
-              <input type="text" name="lastname" />
+              <label htmlFor="lastName">Last name</label>
+              <input type="text" name="lastName" id="lastName"
+                onChange={e => this.updateField(e.target)} />
             </div>
             <div className="wrap__field">
-              <label>Email address</label>
-              <input type="email" name="email" />
+              <label htmlFor="email">Email address</label>
+              <input type="email" name="email" id="email"
+                onChange={e => this.updateField(e.target)} />
             </div>
             <div className="wrap__field">
-              <label>New password</label>
+              <label htmlFor="password">New password</label>
               <input
                 type="password"
                 name="password"
+                id="password"
                 placeholder="Minimum 8 characters"
                 minLength="8"
+                onChange={e => this.updateField(e.target)}
               />
             </div>
             <div className="wrap__field">
-              <label>Confirm password</label>
-              <input type="password" name="password" minLength="8" />
+              <label htmlFor="confirmPassword">Confirm password</label>
+              <input
+                type="password"
+                name="confirmPassword"
+                id="confirmPassword"
+                minLength="8"
+                onChange={e => this.updateField(e.target)} />
             </div>
             <div className="wrap__button">
               <button type="submit">Submit</button>
@@ -53,3 +85,21 @@ export default class Registration extends React.Component {
     );
   }
 }
+
+Registration.defaultProps = {
+  firstName: null,
+  lastName: null,
+  email: null,
+  password: null,
+  confirmPassword: null
+};
+
+const mapStateToProps = state => ({
+  firstName: state.firstName,
+  lastName: state.lastName,
+  email: state.email,
+  password: state.password,
+  confirmPassword: state.confirmPassword
+});
+
+export default connect(mapStateToProps)(Registration);

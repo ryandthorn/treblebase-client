@@ -43,3 +43,44 @@ export const userLoginSuccess = jwt => ({
   type: USER_LOGIN_SUCCESS,
   jwt
 });
+
+export const USER_LOGIN_FAILURE = "USER_LOGIN_FAILURE";
+export const userLoginSuccess = err => ({
+  type: USER_LOGIN_FAILURE,
+  err
+});
+
+export const USER_REGISTRATION = "USER_REGISTRATION";
+export const userRegistration = userInfo => dispatch => {
+  const data = JSON.stringify(userInfo);
+  return fetch(`${API_BASE_URL}/users`, {
+    method: "POST",
+    body: data,
+    headers: { "Content-Type": "application/json" }
+  })
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    })
+    .then(resJson => {
+      dispatch(userRegistrationSuccess(resJson));
+    })
+    .catch(err => {
+      console.error(err);
+      dispatch(userRegistrationFailure(err));
+    });
+}
+
+export const USER_REGISTRATION_SUCCESS = "USER_REGISTRATION_SUCCESS";
+export const userRegistrationSuccess = userInfo => ({
+  type: USER_REGISTRATION_SUCCESS,
+  userInfo
+});
+
+export const USER_REGISTRATION_FAILURE = "USER_REGISTRATION_FAILURE";
+export const userRegistrationFailure = error => ({
+  type: USER_REGISTRATION_FAILURE,
+  error
+});

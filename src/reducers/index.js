@@ -1,6 +1,7 @@
 import * as actions from "../actions";
 const initialState = {
-  posts: []
+  posts: [],
+  user: null
 };
 
 export const indexReducer = (state = initialState, action) => {
@@ -12,7 +13,12 @@ export const indexReducer = (state = initialState, action) => {
     localStorage.setItem("jwt", action.jwt);
     // set user info to state?
     // redirect?
-    // GET /users?
+  } else if (action.type === actions.USER_REGISTRATION_SUCCESS) {
+    return Object.assign({}, state, {
+      user: action.userInfo
+    });
+  } else if (action.type === actions.USER_REGISTRATION_FAILURE) {
+    // handle error
   }
 
   return state;
