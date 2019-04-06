@@ -12,13 +12,19 @@ export class Registration extends React.Component {
       email: null,
       password: null,
       confirmPassword: null
-    }
+    };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.dispatch(userRegistration(this.state));
-    // this.props.history.push(`/dashboard`);
+    this.props
+      .dispatch(userRegistration(this.state))
+      .then(() => {
+        this.props.history.push("/dashboard");
+      })
+      .catch(err => {
+        console.error(err);
+      });
   }
 
   updateField(target) {
@@ -43,18 +49,29 @@ export class Registration extends React.Component {
             <div className="wrap__field">
               <label htmlFor="firstName">First name</label>
               <input
-                type="text" name="firstName" id="firstName"
-                onChange={e => this.updateField(e.target)} />
+                type="text"
+                name="firstName"
+                id="firstName"
+                onChange={e => this.updateField(e.target)}
+              />
             </div>
             <div className="wrap__field">
               <label htmlFor="lastName">Last name</label>
-              <input type="text" name="lastName" id="lastName"
-                onChange={e => this.updateField(e.target)} />
+              <input
+                type="text"
+                name="lastName"
+                id="lastName"
+                onChange={e => this.updateField(e.target)}
+              />
             </div>
             <div className="wrap__field">
               <label htmlFor="email">Email address</label>
-              <input type="email" name="email" id="email"
-                onChange={e => this.updateField(e.target)} />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                onChange={e => this.updateField(e.target)}
+              />
             </div>
             <div className="wrap__field">
               <label htmlFor="password">New password</label>
@@ -74,7 +91,8 @@ export class Registration extends React.Component {
                 name="confirmPassword"
                 id="confirmPassword"
                 minLength="8"
-                onChange={e => this.updateField(e.target)} />
+                onChange={e => this.updateField(e.target)}
+              />
             </div>
             <div className="wrap__button">
               <button type="submit">Submit</button>

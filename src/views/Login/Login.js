@@ -21,7 +21,14 @@ export class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.dispatch(userLogin(this.state));
+    this.props
+      .dispatch(
+        userLogin({ email: this.state.email, password: this.state.password })
+      )
+      .then(() => {
+        this.props.history.push("/dashboard");
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
