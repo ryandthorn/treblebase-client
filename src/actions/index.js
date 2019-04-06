@@ -20,7 +20,10 @@ export const fetchPostsSuccess = posts => ({
 
 export const USER_LOGIN = "USER_LOGIN";
 export const userLogin = userInfo => dispatch => {
-  const data = JSON.stringify({ email: userInfo.email, password: userInfo.password })
+  const data = JSON.stringify({
+    email: userInfo.email,
+    password: userInfo.password
+  });
   return fetch(`${API_BASE_URL}/auth/login`, {
     method: "POST",
     body: data,
@@ -45,7 +48,7 @@ export const userLoginSuccess = jwt => ({
 });
 
 export const USER_LOGIN_FAILURE = "USER_LOGIN_FAILURE";
-export const userLoginSuccess = err => ({
+export const userLoginFailure = err => ({
   type: USER_LOGIN_FAILURE,
   err
 });
@@ -71,7 +74,7 @@ export const userRegistration = userInfo => dispatch => {
       console.error(err);
       dispatch(userRegistrationFailure(err));
     });
-}
+};
 
 export const USER_REGISTRATION_SUCCESS = "USER_REGISTRATION_SUCCESS";
 export const userRegistrationSuccess = userInfo => ({
