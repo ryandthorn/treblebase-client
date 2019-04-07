@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { userLogin } from "../../actions";
+import { Redirect } from "react-router-dom";
 import "./Login.css";
 
 export class Login extends React.Component {
@@ -21,17 +22,15 @@ export class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props
-      .dispatch(
-        userLogin({ email: this.state.email, password: this.state.password })
-      )
-      .then(() => {
-        this.props.history.push("/dashboard");
-      })
-      .catch(err => console.error(err));
+    this.props.dispatch(
+      userLogin({ email: this.state.email, password: this.state.password })
+    );
   }
 
   render() {
+    if (this.props.loggedIn === true) {
+      return <Redirect to="/dashboard" />;
+    }
     return (
       <form
         className="form__login block-center"
@@ -76,7 +75,8 @@ Login.defaultProps = {
 
 const mapStateToProps = state => ({
   email: state.email,
-  password: state.password
+  password: state.password,
+  loggedIn: state.loggedIn
 });
 
 export default connect(mapStateToProps)(Login);
