@@ -3,15 +3,11 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import SelectRegion from "../../components/SelectRegion/SelectRegion";
 import Recordings from "../../components/Recordings/Recordings";
+import Photos from "../../components/Photos/Photos";
 import { editProfile } from "../../actions";
 import "./Profile.css";
 
 export class Profile extends React.Component {
-  constructor() {
-    super();
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData(e.target);
@@ -36,7 +32,7 @@ export class Profile extends React.Component {
 
         <section className="profile__edit">
           <h1>Edit profile</h1>
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={e => this.handleSubmit(e)}>
             <fieldset className="general-info">
               <legend>General information</legend>
               <p>
@@ -120,29 +116,7 @@ export class Profile extends React.Component {
               </p>
             </fieldset>
             <Recordings />
-            {/* <fieldset className="photos">
-              <legend>Photos</legend>
-              <p>
-                <label htmlFor="photo1">Photo 1</label>
-                <input
-                  type="url"
-                  id="photo1"
-                  name="photo1"
-                  defaultValue="https://www.artistsite.com/photo1.jpg"
-                />
-              </p>
-              <p>
-                <label htmlFor="photo2">Photo 2</label>
-                <input
-                  type="url"
-                  id="photo2"
-                  name="photo2"
-                  defaultValue="https://www.artistsite.com/photo2.jpg"
-                />
-              </p>
-              <button type="button">Add another</button>
-            </fieldset> */}
-
+            <Photos />
             <input type="submit" value="Save changes" />
           </form>
         </section>
