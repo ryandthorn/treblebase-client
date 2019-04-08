@@ -16,6 +16,10 @@ export const USER_REGISTRATION = "USER_REGISTRATION";
 export const USER_REGISTRATION_SUCCESS = "USER_REGISTRATION_SUCCESS";
 export const USER_REGISTRATION_FAILURE = "USER_REGISTRATION_FAILURE";
 
+export const EDIT_PROFILE = "EDIT_PROFILE";
+export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
+export const EDIT_PROFILE_FAILURE = "EDIT_PROFILE_FAILURE";
+
 export const fetchPosts = () => dispatch => {
   const jwt = localStorage.getItem("jwt");
   const auth = {
@@ -150,4 +154,67 @@ export const userRegistrationSuccess = userInfo => ({
 export const userRegistrationFailure = error => ({
   type: USER_REGISTRATION_FAILURE,
   error
+});
+
+export const editProfile = formData => dispatch => {
+  const payload = {
+    recordings: [],
+    photos: []
+  };
+  for (var [key, value] of formData.entries()) {
+    if (key.match(/recording/g)) {
+      const i = key.slice(-1);
+      const assignKey = key.slice(10, -2);
+      payload.recordings[i] = Object.assign(
+        {},
+        { ...payload.recordings[i] },
+        { [assignKey]: value }
+      );
+    } else if (key.match(/photo/g)) {
+      const i = key.slice(-1);
+      const assignKey = key.slice(6, -2);
+      payload.photos[i] = Object.assign(
+        {},
+        { ...payload.photos[i] },
+        { [assignKey]: value }
+      );
+    } else {
+      payload[key] = value;
+    }
+  }
+  console.log({ payload });
+  const jwt = localStorage.getItem("jwt");
+  const auth = {
+    method: "PUT",
+    headers: new Headers({
+      Authorization: `Bearer ${jwt}`,
+      "Content-Type": "application/json"
+    }),
+    body: JSON.stringify(payload)
+  };
+  fetch(`${API_BASE_URL}/users`, auth)
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      return res.json();
+    })
+    .then(updatedUser => {
+      console.log({ updatedUser });
+      dispatch(editProfileSuccess(updatedUser));
+    })
+    .catch(err => {
+      console.error(err);
+      dispatch(editProfileFailure(err));
+    });
+};
+
+export const editProfileSuccess = updatedUser => ({
+  type: EDIT_PROFILE_SUCCESS,
+  user: updatedUser
+});
+
+export const editProfileFailure = err => ({
+  type: EDIT_PROFILE_FAILURE,
+  err
 });

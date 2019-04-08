@@ -3,7 +3,10 @@ import {
   FETCH_POSTS_SUCCESS,
   FETCH_USER,
   FETCH_USER_SUCCESS,
-  USER_LOGIN_SUCCESS
+  USER_LOGIN_SUCCESS,
+  EDIT_PROFILE,
+  EDIT_PROFILE_SUCCESS,
+  EDIT_PROFILE_FAILURE
 } from "../actions";
 // import usersReducer from "./users";
 // import postsReducer from "./posts";
@@ -13,6 +16,7 @@ const initialState = {
   user: null,
   fetchingPost: false,
   fetchingUser: false,
+  editingUser: false,
   loggedIn: false
 };
 
@@ -24,7 +28,7 @@ const initialState = {
 // };
 
 export const indexReducer = (state = initialState, action) => {
-  // console.log({ action, state });
+  console.log({ action, state });
   switch (action.type) {
     case FETCH_POSTS:
       return Object.assign({}, state, { fetchingPost: true });
@@ -43,6 +47,12 @@ export const indexReducer = (state = initialState, action) => {
         fetchingUser: false,
         user: action.user
       });
+    case EDIT_PROFILE:
+      return { ...state, editingUser: true };
+    case EDIT_PROFILE_SUCCESS:
+      return Object.assign({}, state, action.user, { editingUser: false });
+    case EDIT_PROFILE_FAILURE:
+      return { ...state, editingUser: false };
     default:
       return state;
   }
