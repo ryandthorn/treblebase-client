@@ -14,7 +14,7 @@ import NoMatch from "../../views/NoMatch/NoMatch";
 
 export class App extends React.Component {
   render() {
-    // console.log({ AppProps: this.props });
+    console.log("App", { props: this.props });
     return (
       <div className="app">
         <header>
@@ -40,8 +40,8 @@ export class App extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user,
-  loggedIn: state.loggedIn
+  users: state.users,
+  posts: state.posts
 });
 
 export default connect(mapStateToProps)(App);

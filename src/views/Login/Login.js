@@ -68,15 +68,8 @@ export class Login extends React.Component {
   }
 }
 
-Login.defaultProps = {
-  username: "",
-  password: ""
-};
-
 const mapStateToProps = state => ({
-  email: state.email,
-  password: state.password,
-  loggedIn: state.loggedIn
+  loggedIn: state.users.loggedIn
 });
 
 export default connect(mapStateToProps)(Login);

@@ -8,7 +8,9 @@ import "./Dashboard.css";
 
 export class Dashboard extends React.Component {
   componentDidMount() {
-    this.props.dispatch(fetchPosts());
+    if (this.props.loggedIn === true) {
+      this.props.dispatch(fetchPosts());
+    }
   }
 
   render() {
@@ -46,16 +48,10 @@ export class Dashboard extends React.Component {
   }
 }
 
-Dashboard.defaultProps = {
-  posts: [],
-  user: null,
-  loggedIn: false
-};
-
 const mapStateToProps = state => ({
-  posts: state.posts,
-  user: state.user,
-  loggedIn: state.loggedIn
+  posts: state.posts.storage,
+  user: state.users.user,
+  loggedIn: state.users.loggedIn
 });
 
 export default connect(mapStateToProps)(Dashboard);

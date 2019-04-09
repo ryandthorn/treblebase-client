@@ -1,59 +1,8 @@
-import {
-  FETCH_POSTS,
-  FETCH_POSTS_SUCCESS,
-  FETCH_USER,
-  FETCH_USER_SUCCESS,
-  USER_LOGIN_SUCCESS,
-  EDIT_PROFILE,
-  EDIT_PROFILE_SUCCESS,
-  EDIT_PROFILE_FAILURE
-} from "../actions";
-// import usersReducer from "./users";
-// import postsReducer from "./posts";
+import usersReducer from "./users";
+import postsReducer from "./posts";
+import { combineReducers } from "redux";
 
-const initialState = {
-  posts: null,
-  user: null,
-  fetchingPost: false,
-  fetchingUser: false,
-  editingUser: false,
-  loggedIn: false
-};
-
-// export const indexReducer = (state = initialState, action) => {
-//   return {
-//     user: usersReducer(state, action),
-//     posts: postsReducer(state, action)
-//   };
-// };
-
-export const indexReducer = (state = initialState, action) => {
-  console.log({ action, state });
-  switch (action.type) {
-    case FETCH_POSTS:
-      return Object.assign({}, state, { fetchingPost: true });
-    case FETCH_USER:
-      return Object.assign({}, state, { fetchingUser: true });
-    case FETCH_POSTS_SUCCESS:
-      return Object.assign({}, state, {
-        fetchingPost: false,
-        posts: [...action.posts]
-      });
-    case USER_LOGIN_SUCCESS:
-      localStorage.setItem("jwt", action.jwt);
-      return Object.assign({}, state, { loggedIn: true });
-    case FETCH_USER_SUCCESS:
-      return Object.assign({}, state, {
-        fetchingUser: false,
-        user: action.user
-      });
-    case EDIT_PROFILE:
-      return { ...state, editingUser: true };
-    case EDIT_PROFILE_SUCCESS:
-      return Object.assign({}, state, action.user, { editingUser: false });
-    case EDIT_PROFILE_FAILURE:
-      return { ...state, editingUser: false };
-    default:
-      return state;
-  }
-};
+export const indexReducer = combineReducers({
+  users: usersReducer,
+  posts: postsReducer
+});

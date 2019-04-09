@@ -40,7 +40,7 @@ export default function SelectRegion(props) {
     );
   });
   return (
-    <select id="region">
+    <select id="region" name="region">
       <option>Set your region</option>
       {regionOptions}
     </select>

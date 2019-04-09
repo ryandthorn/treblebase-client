@@ -60,7 +60,7 @@ export class Recordings extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.users.user
 });
 
 export default connect(mapStateToProps)(Recordings);

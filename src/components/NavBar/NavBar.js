@@ -37,7 +37,7 @@ export class NavBar extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  user: state.user
+  user: state.users.user
 });
 
 export default connect(mapStateToProps)(NavBar);
