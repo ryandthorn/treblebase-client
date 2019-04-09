@@ -5,7 +5,7 @@ import {
   EDIT_PROFILE,
   EDIT_PROFILE_SUCCESS,
   EDIT_PROFILE_FAILURE
-} from "../actions";
+} from "../actions/users";
 
 const initialState = {
   user: null,

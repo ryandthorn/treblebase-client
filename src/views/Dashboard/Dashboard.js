@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import FilterPosts from "../../components/FilterPosts/FilterPosts";
-import { fetchPosts } from "../../actions";
+import { fetchPosts } from "../../actions/posts";
 import "./Dashboard.css";
 
 export class Dashboard extends React.Component {

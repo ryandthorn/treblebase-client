@@ -2,7 +2,7 @@ import {
   FETCH_POSTS,
   FETCH_POSTS_FAILURE,
   FETCH_POSTS_SUCCESS
-} from "../actions";
+} from "../actions/posts";
 
 const initialState = {
   storage: [],

@@ -1,9 +1,5 @@
 import { API_BASE_URL } from "../config";
 
-export const FETCH_POSTS = "FETCH_POSTS";
-export const FETCH_POSTS_SUCCESS = "FETCH_POSTS_SUCCESS";
-export const FETCH_POSTS_FAILURE = "FETCH_POSTS_FAILURE";
-
 export const FETCH_USER = "FETCH_USER";
 export const FETCH_USER_SUCCESS = "FETCH_USER_SUCCESS";
 export const FETCH_USER_FAILURE = "FETCH_USER_FAILURE";
@@ -19,39 +15,6 @@ export const USER_REGISTRATION_FAILURE = "USER_REGISTRATION_FAILURE";
 export const EDIT_PROFILE = "EDIT_PROFILE";
 export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
 export const EDIT_PROFILE_FAILURE = "EDIT_PROFILE_FAILURE";
-
-export const fetchPosts = () => dispatch => {
-  const jwt = localStorage.getItem("jwt");
-  const auth = {
-    headers: new Headers({
-      Authorization: `Bearer ${jwt}`
-    })
-  };
-  fetch(`${API_BASE_URL}/posts/`, auth)
-    .then(res => {
-      if (!res.ok) {
-        return Promise.reject(res.statusText);
-      }
-      return res.json();
-    })
-    .then(resJson => {
-      dispatch(fetchPostsSuccess(resJson));
-    })
-    .catch(err => {
-      console.error(err);
-      dispatch(fetchPostsFailure(err));
-    });
-};
-
-export const fetchPostsSuccess = resJson => ({
-  type: FETCH_POSTS_SUCCESS,
-  posts: resJson.posts
-});
-
-export const fetchPostsFailure = err => ({
-  type: FETCH_POSTS_FAILURE,
-  err
-});
 
 export const fetchUser = () => dispatch => {
   const jwt = localStorage.getItem("jwt");

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { userRegistration } from "../../actions";
+import { userRegistration } from "../../actions/users";
 import "./Registration.css";
 
 export class Registration extends React.Component {

@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import { userLogin } from "../../actions";
+import { userLogin } from "../../actions/users";
 import { Redirect } from "react-router-dom";
 import "./Login.css";
 

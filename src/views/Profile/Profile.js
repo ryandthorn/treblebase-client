@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import SelectRegion from "../../components/SelectRegion/SelectRegion";
 import Recordings from "../../components/Recordings/Recordings";
 import Photos from "../../components/Photos/Photos";
-import { editProfile } from "../../actions";
+import { editProfile } from "../../actions/users";
 import "./Profile.css";
 
 export class Profile extends React.Component {
