@@ -1,9 +1,8 @@
 import React from "react";
-import { connect } from "react-redux";
 import { userRegistration } from "../../actions/users";
 import "./Registration.css";
 
-export class Registration extends React.Component {
+export default class Registration extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -28,9 +27,8 @@ export class Registration extends React.Component {
   }
 
   updateField(target) {
-    const key = target.id;
     this.setState({
-      [key]: target.value
+      [target.id]: target.value
     });
   }
 
@@ -103,21 +101,3 @@ export class Registration extends React.Component {
     );
   }
 }
-
-Registration.defaultProps = {
-  firstName: null,
-  lastName: null,
-  email: null,
-  password: null,
-  confirmPassword: null
-};
-
-const mapStateToProps = state => ({
-  firstName: state.firstName,
-  lastName: state.lastName,
-  email: state.email,
-  password: state.password,
-  confirmPassword: state.confirmPassword
-});
-
-export default connect(mapStateToProps)(Registration);

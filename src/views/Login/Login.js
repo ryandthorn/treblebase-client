@@ -28,7 +28,8 @@ export class Login extends React.Component {
   }
 
   render() {
-    if (this.props.loggedIn === true) {
+    const jwt = localStorage.getItem("jwt");
+    if (jwt) {
       return <Redirect to="/dashboard" />;
     }
     return (

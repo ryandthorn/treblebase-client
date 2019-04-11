@@ -98,7 +98,7 @@ export const userRegistration = userInfo => dispatch => {
       return res.json();
     })
     .then(resJson => {
-      // dispatch(userRegistrationSuccess(resJson));
+      dispatch(userRegistrationSuccess(resJson));
       dispatch(
         userLogin({ email: userInfo.email, password: userInfo.password })
       );

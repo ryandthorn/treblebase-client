@@ -1,18 +1,18 @@
 import React from "react";
+import { filterPostsRegion } from "../../actions/posts";
 import { connect } from "react-redux";
 
 export class SelectRegion extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      region: ""
-    };
-    this.handleChange = this.handleChange.bind(this);
-  }
   handleChange(e) {
-    this.setState({ region: e.target.value });
+    this.props.dispatch(filterPostsRegion(e.target.value));
   }
   render() {
+    let region;
+    if (!this.props.users.user) {
+      region = "";
+    } else {
+      region = this.props.users.user.region;
+    }
     const regions = [
       "Pacific",
       "New York City",
@@ -48,9 +48,8 @@ export class SelectRegion extends React.Component {
       <select
         id="region"
         name="region"
-        value={this.state.value}
-        onChange={this.handleChange}
-        defaultValue={this.props.userRegion}
+        onChange={e => this.handleChange(e)}
+        defaultValue={region}
       >
         <option value="">Set your region</option>
         {regionOptions}
@@ -60,7 +59,8 @@ export class SelectRegion extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  userRegion: state.users.user.region || ""
+  users: state.users,
+  posts: state.posts
 });
 
 export default connect(mapStateToProps)(SelectRegion);

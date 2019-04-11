@@ -1,33 +1,44 @@
 import React from "react";
+import { connect } from "react-redux";
+import SelectRegion from "../SelectRegion/SelectRegion";
+import { filterPostsSearch } from "../../actions/posts";
 import "./FilterPosts.css";
 
-export default function FilterPosts() {
-  return (
-    <section className="filter-posts">
-      <form>
-        <fieldset>
-          <legend>Search Posts</legend>
-          <input type="search" placeholder="Search TrebleBase..." />
-          <input type="submit" value="Go" />
-        </fieldset>
-        <fieldset>
-          <legend>Filter Posts</legend>
-          <label htmlFor="region">Region</label>
-          <select id="region">
-            <option value="">Select region...</option>
-            <option value="pa">Pacific</option>
-            <option value="ny">New York City</option>
-            <option value="ne">New England</option>
-            <option value="um">Upper Midwest</option>
-            <option value="mw">Midwest</option>
-            <option value="pl">Plains</option>
-            <option value="se">Southeast</option>
-            <option value="s">South</option>
-            <option value="sw">Southwest</option>
-            <option value="mt">Mountain</option>
-          </select>
-        </fieldset>
-      </form>
-    </section>
-  );
+export class FilterPosts extends React.Component {
+  handleSearchSubmit(e) {
+    e.preventDefault();
+    const value = document.getElementById("search").value.trim();
+    this.props.dispatch(filterPostsSearch(value));
+  }
+
+  render() {
+    return (
+      <section className="filter-posts">
+        <form onSubmit={e => this.handleSearchSubmit(e)}>
+          <fieldset>
+            <legend>Search Posts</legend>
+            <input
+              type="search"
+              id="search"
+              placeholder="Search TrebleBase..."
+            />
+            <input type="submit" value="Go" />
+          </fieldset>
+        </form>
+        <form>
+          <fieldset>
+            <legend>Filter Posts</legend>
+            <label htmlFor="region">Region</label>
+            <SelectRegion />
+          </fieldset>
+        </form>
+      </section>
+    );
+  }
 }
+
+const mapStateToProps = state => ({
+  posts: state.posts
+});
+
+export default connect(mapStateToProps)(FilterPosts);
