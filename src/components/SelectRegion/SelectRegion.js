@@ -51,7 +51,7 @@ export class SelectRegion extends React.Component {
         onChange={e => this.handleChange(e)}
         defaultValue={region}
       >
-        <option value="">Set your region</option>
+        <option value="">All / Select a region</option>
         {regionOptions}
       </select>
     );
