@@ -20,7 +20,7 @@ export class ViewPost extends React.Component {
         <h3 className="post__location">{post.location}</h3>
         <p className="post__content">{post.content}</p>
         <h3 className="post__open">
-          {post.open
+          {post.status === "open"
             ? "Open - accepting applications"
             : "Closed - no longer accepting applications"}
         </h3>

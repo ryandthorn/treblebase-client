@@ -6,6 +6,7 @@ export const FETCH_POSTS_FAILURE = "FETCH_POSTS_FAILURE";
 
 export const FILTER_POSTS_REGION = "FILTER_POSTS_REGION";
 export const FILTER_POSTS_SEARCH = "FILTER_POSTS_SEARCH";
+export const FILTER_POSTS_STATUS = "FILTER_POSTS_STATUS";
 
 export const fetchPosts = () => dispatch => {
   const jwt = localStorage.getItem("jwt");
@@ -48,4 +49,9 @@ export const filterPostsRegion = region => ({
 export const filterPostsSearch = query => ({
   type: FILTER_POSTS_SEARCH,
   query
+});
+
+export const filterPostsStatus = status => ({
+  type: FILTER_POSTS_STATUS,
+  status
 });
