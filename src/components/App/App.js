@@ -10,6 +10,7 @@ import Registration from "../../views/Registration/Registration";
 import Login from "../../views/Login/Login";
 import AuthBar from "../AuthBar/AuthBar";
 import NavBar from "../NavBar/NavBar";
+import ViewPost from "../../views/ViewPost/ViewPost";
 import NoMatch from "../../views/NoMatch/NoMatch";
 
 export class App extends React.Component {
@@ -31,6 +32,7 @@ export class App extends React.Component {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/register" component={Registration} />
             <Route exact path="/login" component={Login} />
+            <Route path="/post/:postID" component={ViewPost} />
             <Route component={NoMatch} />
           </Switch>
         </main>

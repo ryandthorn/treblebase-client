@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 export class PostsFeed extends React.Component {
   render() {
@@ -32,7 +33,9 @@ export class PostsFeed extends React.Component {
             <h3 className="post__company">{post.company}</h3>
             <h3 className="post__location">{post.location}</h3>
             <p className="post__content">{post.content}</p>
-            <button className="btn__details">View details</button>
+            <Link to={`/post/${post.id}`} className="btn__details">
+              View details
+            </Link>
           </div>
         ));
       } else {
@@ -42,7 +45,9 @@ export class PostsFeed extends React.Component {
             <h3 className="post__company">{post.company}</h3>
             <h3 className="post__location">{post.location}</h3>
             <p className="post__content">{post.content}</p>
-            <button className="btn__details">View details</button>
+            <Link to={`/post/${post.id}`} className="btn__details">
+              View details
+            </Link>
           </div>
         ));
       }
