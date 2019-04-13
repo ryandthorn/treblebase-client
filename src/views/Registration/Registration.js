@@ -1,8 +1,9 @@
 import React from "react";
+import { connect } from "react-redux";
 import { userRegistration } from "../../actions/users";
 import "./Registration.css";
 
-export default class Registration extends React.Component {
+export class Registration extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -101,3 +102,5 @@ export default class Registration extends React.Component {
     );
   }
 }
+
+export default connect()(Registration);

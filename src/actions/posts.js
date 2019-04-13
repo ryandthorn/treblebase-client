@@ -8,6 +8,10 @@ export const FILTER_POSTS_REGION = "FILTER_POSTS_REGION";
 export const FILTER_POSTS_SEARCH = "FILTER_POSTS_SEARCH";
 export const FILTER_POSTS_STATUS = "FILTER_POSTS_STATUS";
 
+export const APPLY_TO_POST = "APPLY_TO_POST";
+export const APPLY_TO_POST_SUCCESS = "APPLY_TO_POST_SUCCESS";
+export const APPLY_TO_POST_FAILURE = "APPLY_TO_POST_FAILURE";
+
 export const fetchPosts = () => dispatch => {
   const jwt = localStorage.getItem("jwt");
   const auth = {
@@ -55,3 +59,41 @@ export const filterPostsStatus = status => ({
   type: FILTER_POSTS_STATUS,
   status
 });
+
+export const applyToPost = (formData, postID) => dispatch => {
+  const payload = {};
+  for (let [key, value] of formData.entries()) {
+    payload[key] = value;
+  }
+
+  const jwt = localStorage.getItem("jwt");
+  const options = {
+    headers: new Headers({
+      Authorization: `Bearer ${jwt}`,
+      "Content-Type": "application/json"
+    }),
+    method: "PUT",
+    body: JSON.stringify({ applicant: payload })
+  };
+
+  fetch(`${API_BASE_URL}/posts/apply/${postID}`, options)
+    .then(res => {
+      if (!res.ok) {
+        return Promise.reject(res.statusText);
+      }
+      dispatch(applyToPostSuccess());
+    })
+    .catch(err => {
+      console.error(err);
+      dispatch(applyToPostFailure(err));
+    });
+};
+
+export const applyToPostSuccess = () => ({
+  type: APPLY_TO_POST_SUCCESS
+})
+
+export const applyToPostFailure = err => ({
+  type: APPLY_TO_POST_FAILURE,
+  err
+})

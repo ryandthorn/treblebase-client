@@ -124,7 +124,7 @@ export const editProfile = formData => dispatch => {
     recordings: [],
     photos: []
   };
-  for (var [key, value] of formData.entries()) {
+  for (let [key, value] of formData.entries()) {
     if (key.match(/recording/g)) {
       const i = key.slice(-1);
       const assignKey = key.slice(10, -2);
@@ -145,7 +145,7 @@ export const editProfile = formData => dispatch => {
       payload[key] = value;
     }
   }
-  console.log({ payload });
+
   const jwt = localStorage.getItem("jwt");
   const auth = {
     method: "PUT",

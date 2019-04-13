@@ -54,6 +54,10 @@ export class Profile extends React.Component {
                 />
               </p>
               <p>
+                <label htmlFor="instrument">Instrument</label>
+                <input type="text" id="instrument" name="instrument" defaultValue={user.instrument} />
+              </p>
+              <p>
                 <label htmlFor="region">Region</label>
                 <SelectRegion region={user.region} />
               </p>
