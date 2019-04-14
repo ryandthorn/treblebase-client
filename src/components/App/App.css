@@ -13,9 +13,9 @@ fieldset {
 }
 
 :root {
-  --color-teal: rgb(113, 246, 184);
-  --color-pink: rgb(253, 133, 162);
-  --color-yellow: rgb(254, 196, 0);
-  --color-blue: rgb(31, 73, 191);
+  --color-teal: rgb(20, 250, 173);
+  --color-pink: rgb(250, 75, 157);
+  --color-yellow: rgb(252, 225, 69);
+  --color-blue: rgb(92, 209, 224);
   --color-grey: rgb(68, 68, 68);
 }
