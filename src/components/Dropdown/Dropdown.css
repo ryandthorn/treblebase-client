@@ -1,0 +1,32 @@
+.dropdown {
+  background: rgb(255, 255, 255);
+  box-shadow: -2px 2px #999;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  top: 15vh;
+  width: 50vw;
+}
+
+.dropdown ul {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown ul li {
+  display: block;
+  list-style: none;
+}
+
+.dropdown label {
+  cursor: pointer;
+}
+
+.toggle-menu {
+  display: none;
+}
+
+.toggle-menu:checked + .dropdown {
+  height: 50vh;
+}
