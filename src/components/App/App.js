@@ -1,5 +1,6 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
+import { connect } from "react-redux";
 import "./App.css";
 
 import Landing from "../../views/Landing/Landing";
@@ -9,11 +10,13 @@ import Registration from "../../views/Registration/Registration";
 import Login from "../../views/Login/Login";
 import AuthBar from "../AuthBar/AuthBar";
 import NavBar from "../NavBar/NavBar";
+import ViewPost from "../../views/ViewPost/ViewPost";
 import NoMatch from "../../views/NoMatch/NoMatch";
 
-export default function App() {
-  return (
-    <Router>
+export class App extends React.Component {
+  render() {
+    // console.log("App", { props: this.props });
+    return (
       <div className="app">
         <header>
           <Switch>
@@ -29,10 +32,18 @@ export default function App() {
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/register" component={Registration} />
             <Route exact path="/login" component={Login} />
+            <Route path="/post/:postID" component={ViewPost} />
             <Route component={NoMatch} />
           </Switch>
         </main>
       </div>
-    </Router>
-  );
+    );
+  }
 }
+
+const mapStateToProps = state => ({
+  users: state.users,
+  posts: state.posts
+});
+
+export default connect(mapStateToProps)(App);
