@@ -1,21 +1,34 @@
 /* General styles */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
+
+:root {
+  --color-teal: rgb(20, 250, 173);
+  --color-pink: rgb(250, 75, 157);
+  --color-yellow: rgb(252, 225, 69);
+  --color-blue: rgb(92, 209, 224);
+  --color-grey: rgb(68, 68, 68);
+  --font-title: "Roboto", sans-serif;
+  --font-text: "Open Sans", sans-serif;
+}
 
 * {
   box-sizing: border-box;
+  font-family: var(--font-text);
 }
 
-.hidden {
-  display: none;
-}
-
-.inline-center {
-  text-align: center;
-}
-
-.block-center {
-  margin: 0 auto;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
 }
 
 fieldset {
   border: none;
+}
+
+.hidden {
+  display: none;
 }

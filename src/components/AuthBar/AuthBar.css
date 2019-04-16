@@ -35,8 +35,8 @@
   color: black;
   display: inline-block;
   flex: 1;
-  margin-right: .25rem;
-  padding: .5em .25em;
+  margin-right: 0.25rem;
+  padding: 0.5em 0.25em;
   text-align: center;
   text-decoration: none;
 }
