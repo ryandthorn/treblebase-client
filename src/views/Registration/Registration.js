@@ -85,7 +85,7 @@ export class Registration extends React.Component {
             />
             <input
               type="submit"
-              class="input__submit"
+              className="input__submit"
               value="Submit registration"
             />
           </fieldset>
