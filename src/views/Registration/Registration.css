@@ -1,26 +1,34 @@
 .form__registration {
-  margin: 5rem auto;
+  margin: 3rem 1rem;
   max-width: fit-content;
 }
 
+.form__registration h1 {
+  font-size: 26px;
+  text-align: center;
+}
+
 .form__registration fieldset {
-  background-color: lightgray;
-  border: none;
+  background-color: var(--color-blue);
+  border: 1px solid black;
   border-radius: 10px;
   margin-top: 2rem;
 }
 
-.form__registration input {
-  max-width: 150px;
+.form__registration label {
+  font-weight: 600;
 }
 
-.wrap__field {
-  padding: 0.5rem;
-  text-align: right;
-}
-
-.wrap__button {
-  text-align: center;
+.input__submit {
+  background-color: var(--color-pink);
+  border: 1px solid black;
+  box-shadow: 3px 3px black;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 8px 0;
+  padding: 1em 1.5em;
+  width: 100%;
 }
 
 .form__registration a {
