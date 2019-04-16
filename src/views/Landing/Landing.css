@@ -3,7 +3,12 @@
   display: flex;
   flex-wrap: wrap;
   min-height: 150px;
-  padding: 5% 0;
+  justify-content: center;
+  padding: 5% 0 0 0;
+}
+
+.img__logo {
+  max-height: 120px;
 }
 
 .hero h1 {
@@ -13,11 +18,8 @@
 }
 
 .hero h2 {
+  margin: 1em auto;
   text-align: center;
-}
-
-.img__logo {
-  height: 200px;
 }
 
 .register {
@@ -25,7 +27,7 @@
   border: 1px solid black;
   border-radius: 5px;
   margin: 1.5rem;
-  min-height: 150px;
+  min-height: fit-content;
 }
 
 .register h2 {
@@ -41,8 +43,8 @@
   color: white;
   display: block;
   font-family: var(--font-title);
-  font-size: 30px;
-  margin: 0 auto;
+  font-size: 26px;
+  margin: 0.75em auto;
   padding: 0.5em 1em;
   text-decoration: none;
   width: fit-content;
@@ -61,6 +63,7 @@
   box-shadow: 3px 3px black;
   font-family: var(--font-title);
   font-size: 20px;
+  font-weight: bold;
   height: fit-content;
   padding: 0.5em 1em;
   text-decoration: none;
