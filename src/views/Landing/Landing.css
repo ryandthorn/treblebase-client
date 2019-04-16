@@ -1,18 +1,15 @@
-.landing section {
-  min-height: 150px;
-}
-
-.landing section:nth-child(even) {
-  background-color: #eee;
-}
-
 .hero {
-  padding: 6% 0;
-}
-
-.hero div {
   align-items: center;
   display: flex;
+  flex-wrap: wrap;
+  min-height: 150px;
+  padding: 5% 0;
+}
+
+.hero h1 {
+  font-family: "Patrick Hand", "cursive";
+  font-size: 46px;
+  text-decoration: underline;
 }
 
 .hero h2 {
@@ -23,25 +20,49 @@
   height: 200px;
 }
 
-.img__about {
-  display: block;
-  width: 100vw;
+.register {
+  background-color: var(--color-blue);
+  border: 1px solid black;
+  border-radius: 5px;
+  margin: 1.5rem;
+  min-height: 150px;
 }
-/* .about {
-  background-image: url(https://images.unsplash.com/photo-1530522070995-aa23c19e77d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
-  background-repeat: no-repeat;
-  background-size: contain;
-} */
+
+.register h2 {
+  font-size: 22px;
+  text-align: center;
+}
 
 .Link__register {
-  background-color: #eee;
+  background-color: var(--color-pink);
   border: 1px solid black;
   border-radius: 5px;
   box-shadow: 3px 3px black;
-  color: black;
+  color: white;
   display: block;
+  font-family: var(--font-title);
+  font-size: 30px;
   margin: 0 auto;
-  padding: 1em;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.login {
+  align-items: center;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.Link__login {
+  background-color: var(--color-yellow);
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  font-family: var(--font-title);
+  font-size: 20px;
+  height: fit-content;
+  padding: 0.5em 1em;
   text-decoration: none;
   width: fit-content;
 }

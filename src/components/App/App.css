@@ -1,5 +1,5 @@
 /* General styles */
-@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand|Open+Sans|Roboto");
 
 :root {
   --color-teal: rgb(20, 250, 173);
@@ -9,6 +9,7 @@
   --color-grey: rgb(68, 68, 68);
   --font-title: "Roboto", sans-serif;
   --font-text: "Open Sans", sans-serif;
+  --font-special: "Patrick Hand", cursive;
 }
 
 * {
