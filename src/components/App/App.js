@@ -15,7 +15,6 @@ import NoMatch from "../../views/NoMatch/NoMatch";
 
 export class App extends React.Component {
   render() {
-    // console.log("App", { props: this.props });
     return (
       <div className="app">
         <header>

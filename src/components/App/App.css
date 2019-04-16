@@ -1,16 +1,5 @@
 /* General styles */
-
-* {
-  box-sizing: border-box;
-}
-
-.hidden {
-  display: none;
-}
-
-fieldset {
-  border: none;
-}
+@import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto");
 
 :root {
   --color-teal: rgb(20, 250, 173);
@@ -18,4 +7,28 @@ fieldset {
   --color-yellow: rgb(252, 225, 69);
   --color-blue: rgb(92, 209, 224);
   --color-grey: rgb(68, 68, 68);
+  --font-title: "Roboto", sans-serif;
+  --font-text: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
+fieldset {
+  border: none;
+}
+
+.hidden {
+  display: none;
 }

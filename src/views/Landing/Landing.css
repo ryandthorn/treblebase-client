@@ -1,20 +1,37 @@
 .landing section {
   min-height: 150px;
-  padding: 6% 0;
-  background-color: #ccc;
 }
 
 .landing section:nth-child(even) {
   background-color: #eee;
 }
 
-.hero * {
-  padding: 2rem;
+.hero {
+  padding: 6% 0;
 }
 
-.hero h1 {
-  font-size: 3em;
+.hero div {
+  align-items: center;
+  display: flex;
 }
+
+.hero h2 {
+  text-align: center;
+}
+
+.img__logo {
+  height: 200px;
+}
+
+.img__about {
+  display: block;
+  width: 100vw;
+}
+/* .about {
+  background-image: url(https://images.unsplash.com/photo-1530522070995-aa23c19e77d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-repeat: no-repeat;
+  background-size: contain;
+} */
 
 .Link__register {
   background-color: #eee;
