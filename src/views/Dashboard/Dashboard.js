@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import FilterPosts from "../../components/FilterPosts/FilterPosts";
 import PostsFeed from "../../components/PostsFeed/PostsFeed";
-import DashNav from "../../components/DashNav/DashNav";
 import { fetchPosts } from "../../actions/posts";
 import { fetchUser } from "../../actions/users";
 import "./Dashboard.css";
@@ -23,7 +22,6 @@ export class Dashboard extends React.Component {
   render() {
     return (
       <div className="dashboard">
-        <DashNav />
         <FilterPosts />
         <PostsFeed />
       </div>
