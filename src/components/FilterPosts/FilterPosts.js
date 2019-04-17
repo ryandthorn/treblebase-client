@@ -19,29 +19,36 @@ export class FilterPosts extends React.Component {
       <section className="filter-posts">
         <form onSubmit={e => this.handleSearchSubmit(e)}>
           <fieldset>
-            <legend>Search Posts</legend>
-            <input
-              type="search"
-              id="search"
-              placeholder="Search TrebleBase..."
-            />
-            <input type="submit" value="Go" />
+            <legend>Search TrebleBase</legend>
+            <div className="wrap__search">
+              <input
+                type="search"
+                id="search"
+                placeholder="Search..."
+                autoFocus
+              />
+              <input type="submit" value="Go" />
+            </div>
           </fieldset>
         </form>
         <form>
           <fieldset>
             <legend>Filter Posts</legend>
-            <label htmlFor="region">Region</label>
-            <SelectRegion />
-            <label htmlFor="open">Accepting applications</label>
-            <select
-              id="openStatus"
-              name="openStatus"
-              onChange={e => this.handleOpenStatus(e)}
-            >
-              <option value="open">Open</option>
-              <option value="closed">Closed</option>
-            </select>
+            <div className="filter-field">
+              <label htmlFor="region">Region</label>
+              <SelectRegion />
+            </div>
+            <div className="filter-field">
+              <label htmlFor="open">Accepting applications</label>
+              <select
+                id="openStatus"
+                name="openStatus"
+                onChange={e => this.handleOpenStatus(e)}
+              >
+                <option value="open">Open</option>
+                <option value="closed">Closed</option>
+              </select>
+            </div>
           </fieldset>
         </form>
       </section>

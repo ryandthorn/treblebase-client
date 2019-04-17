@@ -1,0 +1,49 @@
+#search {
+  border: 1px solid #aaa;
+  flex-shrink: 1;
+  padding: 0.5em 1em;
+  width: 80%;
+}
+
+.filter-posts {
+  border: 1px solid black;
+  margin: 1em;
+  padding: 0.5em 0.5em 0 0.5em;
+}
+
+.filter-posts form {
+  margin: 0.5em 0;
+}
+
+.filter-posts fieldset {
+  padding: 0.25em;
+}
+
+.filter-posts legend {
+  font-weight: bold;
+}
+
+.wrap__search {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0;
+}
+
+.filter-posts label {
+  padding-right: 1em;
+}
+
+.filter-posts input[type="submit"] {
+  margin: 0 0.5em;
+  padding: 7px 12px;
+}
+
+.filter-field {
+  display: flex;
+  margin: 10px 0;
+  justify-content: space-between;
+}
+
+.filter-field label {
+  padding: 0.5em;
+}
