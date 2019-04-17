@@ -10,19 +10,9 @@ export default class Dropdown extends React.Component {
   render() {
     return (
       <nav role="navigation" className="dropdown" id="dropdown">
-        <ul>
-          <li>
-            <Link to="/dashboard">Dashboard</Link>
-          </li>
-          <li>
-            <Link to="/profile">Edit Profile</Link>
-          </li>
-          <li>
-            <Link to="/" onClick={this.handleLogout}>
-              Log out
-            </Link>
-          </li>
-        </ul>
+        <Link to="/" onClick={this.handleLogout}>
+          Log out
+        </Link>
       </nav>
     );
   }

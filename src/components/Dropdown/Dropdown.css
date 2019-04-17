@@ -1,22 +1,16 @@
 .dropdown {
   background: rgb(255, 255, 255);
-  box-shadow: -2px 2px #999;
+  border: 0;
   height: 0;
   overflow: hidden;
   position: absolute;
-  right: 0;
-  top: 15vh;
-  width: 50vw;
+  right: -1.5rem;
+  top: 4.7rem;
+  width: 30vw;
 }
-
-.dropdown ul {
-  margin: 0;
-  padding: 0;
-}
-
-.dropdown ul li {
-  display: block;
-  list-style: none;
+.dropdown a {
+  display: inline-block;
+  padding: 1em;
 }
 
 .dropdown label {
@@ -28,5 +22,7 @@
 }
 
 .toggle-menu:checked + .dropdown {
-  height: 50vh;
+  border: 2px solid black;
+  border-top: 0;
+  height: fit-content;
 }
