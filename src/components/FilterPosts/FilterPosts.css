@@ -6,7 +6,8 @@
 }
 
 .filter-posts {
-  border: 1px solid black;
+  border: 1px solid #aaa;
+  border-radius: 10px;
   margin: 1em;
   padding: 0.5em 0.5em 0 0.5em;
 }
@@ -34,10 +35,13 @@
 }
 
 .filter-posts input[type="submit"] {
-  margin: 0 0.5em;
-  padding: 7px 12px;
+  background-color: white;
+  border: 3px solid black;
+  border-radius: 5px;
+  color: black;
+  margin-left: 0.5em;
+  padding: 7px 15px;
 }
-
 .filter-field {
   display: flex;
   margin: 10px 0;
