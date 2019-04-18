@@ -1,0 +1,42 @@
+.successMessage {
+  border: 3px solid var(--color-pink);
+  border-radius: 10px;
+  margin: 2em 2em;
+  padding: 0.5em;
+  text-align: center;
+}
+
+.wrap__Link-dash {
+  margin: 3em auto 3em auto;
+  text-align: center;
+  width: 50%;
+}
+
+.Link__Dashboard {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  display: block;
+  font-family: var(--font-title);
+  font-size: 18px;
+  margin: 0.75em auto;
+  padding: 0.5em 1em;
+}
+
+.application {
+  margin: 3rem 0.5rem 0 0.5rem;
+}
+
+.application legend {
+  font-size: 26px;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.application select {
+  border: 1px solid #aaa;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
+}

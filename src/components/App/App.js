@@ -15,13 +15,13 @@ import NoMatch from "../../views/NoMatch/NoMatch";
 
 export class App extends React.Component {
   render() {
-    // console.log("App", { props: this.props });
     return (
       <div className="app">
         <header>
           <Switch>
             <Route path="/dashboard" component={NavBar} />
             <Route path="/profile" component={NavBar} />
+            <Route path="/post" component={NavBar} />
             <Route path="/" component={AuthBar} />
           </Switch>
         </header>

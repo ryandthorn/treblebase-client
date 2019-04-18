@@ -33,36 +33,27 @@ export class Login extends React.Component {
       return <Redirect to="/dashboard" />;
     }
     return (
-      <form
-        className="form__login block-center"
-        onSubmit={e => this.handleSubmit(e)}
-      >
+      <form className="form__login" onSubmit={e => this.handleSubmit(e)}>
         <fieldset>
           <legend className="hidden">Log in</legend>
-          <div className="wrap__field">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              name="email"
-              id="email"
-              placeholder="Enter email address"
-              required
-              onChange={e => this.updateField(e.target)}
-            />
-          </div>
-          <div className="wrap__field">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              required
-              onChange={e => this.updateField(e.target)}
-            />
-          </div>
-          <button type="submit" className="button--small">
-            Log in
-          </button>
+          <label htmlFor="email">Email</label>
+          <input
+            type="text"
+            name="email"
+            id="email"
+            placeholder="Enter email address"
+            required
+            onChange={e => this.updateField(e.target)}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            required
+            onChange={e => this.updateField(e.target)}
+          />
+          <input type="submit" className="input__login" value="Submit" />
         </fieldset>
       </form>
     );

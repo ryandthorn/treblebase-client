@@ -2,7 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link, Redirect } from "react-router-dom";
 import { applyToPost } from "../../actions/posts";
-import SelectRegion from "../../components/SelectRegion/SelectRegion"
+import SelectRegion from "../../components/SelectRegion/SelectRegion";
+import "./ViewPost.css";
 
 export class ViewPost extends React.Component {
   handleSubmit(e) {
@@ -19,29 +20,41 @@ export class ViewPost extends React.Component {
       post => post.id === this.props.match.params.postID
     );
     const post = _post[0];
-    console.log(post)
 
     let successMessage = "";
-    const alreadyApplied = post.applicants.filter(applicant => applicant.email === user.email);
-    if (alreadyApplied) {
-      successMessage = <h3>You've successfully applied to this post!</h3>
+    const alreadyApplied = post.applicants.filter(
+      applicant => applicant.email === user.email
+    );
+    if (alreadyApplied.length > 0) {
+      successMessage = (
+        <h3 className="successMessage">
+          You've successfully applied to this post!
+        </h3>
+      );
     }
 
     return (
       <section className="viewPost">
         {successMessage}
-        <Link to="/dashboard">Return to Dashboard</Link>
-        <p className="post__datePosted">{post.datePosted}</p>
-        <h2 className="post__title">{post.title}</h2>
-        <h3 className="post__company">{post.company}</h3>
-        <h3 className="post__location">{post.location}</h3>
-        <p className="post__content">{post.content}</p>
-        <h3 className="post__open">
-          {post.status === "open"
-            ? "Open - accepting applications"
-            : "Closed - no longer accepting applications"}
-        </h3>
-        <h3 className="post__fee">Offer: {post.fee}</h3>
+        <p className="wrap__Link-dash">
+          <Link to="/dashboard" className="Link__Dashboard">
+            Return to Dashboard
+          </Link>
+        </p>
+        <div className="wrap__post">
+          <p className="post__datePosted">{post.datePosted}</p>
+          <h2 className="post__title">{post.title}</h2>
+          <h3 className="post__company">Company: {post.company}</h3>
+          <h3 className="post__region">Region: {post.region}</h3>
+          <h3 className="post__location">Location: {post.location}</h3>
+          <p className="post__content">{post.content}</p>
+          <h3 className="post__open">
+            {post.status === "open"
+              ? "Open - accepting applications"
+              : "Closed - no longer accepting applications"}
+          </h3>
+          <h3 className="post__fee">Offer: {post.fee}</h3>
+        </div>
         <form className="application" onSubmit={e => this.handleSubmit(e)}>
           <legend>Application</legend>
           <fieldset>
@@ -65,11 +78,22 @@ export class ViewPost extends React.Component {
             </p>
             <p>
               <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" defaultValue={user.email} readOnly />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                defaultValue={user.email}
+                readOnly
+              />
             </p>
             <p>
               <label htmlFor="instrument">Instrument</label>
-              <input type="text" id="instrument" name="instrument" defaultValue={user.instrument} />
+              <input
+                type="text"
+                id="instrument"
+                name="instrument"
+                defaultValue={user.instrument}
+              />
             </p>
             <p>
               <label htmlFor="region">Region</label>
@@ -130,7 +154,11 @@ export class ViewPost extends React.Component {
               />
             </p>
           </fieldset>
-          <input type="submit" value="Submit Application" />
+          <input
+            type="submit"
+            value="Submit Application"
+            className="btn__submit"
+          />
         </form>
       </section>
     );

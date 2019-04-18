@@ -1,31 +1,20 @@
 .authbar {
   align-items: center;
-  background-color: #71f6b8;
+  background-color: var(--color-teal);
   border-bottom: 1px solid grey;
   display: flex;
-  height: 15vh;
+  height: 10vh;
+  justify-content: right;
+  position: relative;
   width: 100%;
-}
-
-.logo {
-  background-color: #eee;
-  border: 1px solid grey;
-  flex: 1;
-  height: 80%;
-  margin: 1rem;
-}
-
-.logo-ph {
-  padding-left: 1em;
 }
 
 .register--login {
   align-items: center;
   display: flex;
-  flex: 1;
-  flex-wrap: none;
-  justify-content: center;
-  text-align: center;
+  position: absolute;
+  right: 0;
+  width: 50%;
 }
 
 .register--login a {
@@ -34,9 +23,9 @@
   border-radius: 5px;
   color: black;
   display: inline-block;
-  flex: 1;
-  margin-right: .25rem;
-  padding: .5em .25em;
+  flex-basis: 50%;
+  margin: 0 .25em; 
+  padding: 0.5em 0.25em;
   text-align: center;
   text-decoration: none;
 }

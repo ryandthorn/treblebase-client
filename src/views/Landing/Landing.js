@@ -1,31 +1,32 @@
 import React from "react";
-import Login from "../Login/Login";
 import "./Landing.css";
 import { Link } from "react-router-dom";
 
 export default function Landing() {
   return (
     <section className="landing">
-      <section className="hero inline-center">
+      <section className="hero">
+        <img
+          className="img__logo"
+          src="https://st2.depositphotos.com/1747885/7315/v/950/depositphotos_73153169-stock-illustration-logo-treble-clef.jpg"
+          alt="Logo"
+        />
         <h1>TrebleBase</h1>
         <h2>Connecting classical musicians to performance opportunities</h2>
       </section>
 
-      <section className="about inline-center">
-        <h2>Who we are</h2>
-        <h3>What we do</h3>
-      </section>
-
-      <section className="register inline-center">
-        <h2>Become a part of our community today!</h2>
+      <section className="register">
+        <h2>Become a part of our community!</h2>
         <Link to="/register" className="Link__register">
-          Sign up for TrebleBase
+          Get Started
         </Link>
       </section>
 
-      <section className="login inline-center">
+      <section className="login">
         <h3>Already a member?</h3>
-        <Login />
+        <Link to="/login" className="Link__login">
+          Log In
+        </Link>
       </section>
     </section>
   );

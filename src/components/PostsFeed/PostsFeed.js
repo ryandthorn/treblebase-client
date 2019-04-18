@@ -1,6 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+import "./PostsFeed.css";
+import displayRegion from "../../displayRegion";
 
 export class PostsFeed extends React.Component {
   render() {
@@ -28,21 +30,22 @@ export class PostsFeed extends React.Component {
         filterSearch.some(sPost => rPost.id === sPost.id)
       );
       const filtered = regionSearch.filter(post => post.status === status);
-      console.log({ regionSearch, filtered });
       posts = filtered.map((post, i) => (
-        <div className="card-wrapper" key={i}>
+        <div className="wrap__post" key={i}>
           <h2 className="post__title">{post.title}</h2>
-          <h3 className="post__company">{post.company}</h3>
-          <h3 className="post__location">{post.location}</h3>
-          <p className="post__content">{post.content}</p>
+          <h3 className="post__company">Company: {post.company}</h3>
+          <h3 className="post__region">Region: {displayRegion(post.region)}</h3>
+          <h3 className="post__location">Location: {post.location}</h3>
           <p className="post__status">
             {post.status === "open"
               ? "Open - accepting applications"
               : "Closed - no longer accepting applications"}
           </p>
-          <Link to={`/post/${post.id}`} className="btn__details">
-            View details
-          </Link>
+          <p className="wrap__details">
+            <Link to={`/post/${post.id}`} className="Link__details">
+              View details
+            </Link>
+          </p>
         </div>
       ));
     } else {

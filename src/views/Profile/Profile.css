@@ -4,8 +4,13 @@
 }
 
 .profile legend {
+  background-color: var(--color-blue);
+  border: 1px solid black;
   font-size: larger;
   font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0.25em 0.5em;
+  text-align: center;
 }
 
 .profile input[type="submit"] {
@@ -14,43 +19,28 @@
   padding: 0.5rem 0.75rem;
 }
 
-.profile__edit {
-  padding: 1rem;
-}
-
-.profile fieldset {
-  margin: 1rem auto;
-  padding: 0;
+.wrap__edit-profile {
+  padding: 1rem 0.5rem;
 }
 
 .profile p label {
   display: inline-block;
-  width: 75px;
 }
 
-.dashboard-navigation {
-  display: flex;
-  margin: 0 auto;
+.wrap__edit-profile h1 {
   text-align: center;
-  width: 80%;
 }
 
-.active {
-  background-color: lightgoldenrodyellow;
+.form__edit-profile fieldset {
+  border-radius: 10px;
+  border: 1px solid var(--color-grey);
+  margin: 2rem auto;
 }
 
-.tab {
-  border: 1px solid rgb(0, 0, 0, 0);
-  flex: 1;
-  margin: 1rem 0.5rem 0 0.5rem;
-  padding: 1em;
-  width: fit-content;
-}
-.tab:hover {
+.form__edit-profile select {
   border: 1px solid #aaa;
-  cursor: pointer;
-}
-
-.profile__edit h1 {
-  text-align: center;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
 }

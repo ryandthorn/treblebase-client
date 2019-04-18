@@ -3,24 +3,6 @@ import { connect } from "react-redux";
 
 export class Recordings extends React.Component {
   render() {
-    // const items = this.props.user.recordings.map((recording, i) => (
-    //   <div className="recording" key={i}>
-    //     <label htmlFor={`recording-title-${i}`}>Recording {i + 1} title</label>
-    //     <input
-    //       type="text"
-    //       id={`recording-title-${i}`}
-    //       name={`recording-title-${i}`}
-    //       defaultValue={recording.title || ""}
-    //     />
-    //     <label htmlFor={`recording-url-${i}`}>Recording {i + 1} URL</label>
-    //     <input
-    //       type="url"
-    //       id={`recording-url-${i}`}
-    //       name={`recording-url-${i}`}
-    //       defaultValue={recording.url || ""}
-    //     />
-    //   </div>
-    // ));
     return (
       <fieldset className="recordings" id="recordings">
         <legend>Recordings</legend>
