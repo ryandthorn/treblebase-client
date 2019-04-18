@@ -21,6 +21,7 @@ export class App extends React.Component {
           <Switch>
             <Route path="/dashboard" component={NavBar} />
             <Route path="/profile" component={NavBar} />
+            <Route path="/post" component={NavBar} />
             <Route path="/" component={AuthBar} />
           </Switch>
         </header>

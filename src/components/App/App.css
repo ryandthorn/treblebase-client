@@ -26,20 +26,43 @@ h6 {
   font-family: var(--font-title);
 }
 
+a {
+  color: black;
+  text-decoration: none;
+}
+
 fieldset {
   border: none;
 }
 
 input[type="text"],
 input[type="password"],
-input[type="email"] {
+input[type="email"],
+input[type="url"],
+input[type="number"] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #aaa;
 }
 
 .hidden {
   display: none;
+}
+
+.btn__submit {
+  background-color: var(--color-teal);
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  color: black;
+  display: block;
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto 5em auto;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  width: fit-content;
 }
