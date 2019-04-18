@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import SelectRegion from "../../components/SelectRegion/SelectRegion";
 import Recordings from "../../components/Recordings/Recordings";
@@ -21,18 +21,12 @@ export class Profile extends React.Component {
 
     return (
       <div className="profile">
-        <section className="dashboard-navigation">
-          <div className="tab">
-            <Link to="/dashboard">Opportunities</Link>
-          </div>
-          <div className="active tab">
-            <Link to="/profile">Profile</Link>
-          </div>
-        </section>
-
-        <section className="profile__edit">
+        <section className="wrap__edit-profile">
           <h1>Edit profile</h1>
-          <form onSubmit={e => this.handleSubmit(e)}>
+          <form
+            className="form__edit-profile"
+            onSubmit={e => this.handleSubmit(e)}
+          >
             <fieldset className="general-info">
               <legend>General information</legend>
               <p>
@@ -55,7 +49,12 @@ export class Profile extends React.Component {
               </p>
               <p>
                 <label htmlFor="instrument">Instrument</label>
-                <input type="text" id="instrument" name="instrument" defaultValue={user.instrument} />
+                <input
+                  type="text"
+                  id="instrument"
+                  name="instrument"
+                  defaultValue={user.instrument}
+                />
               </p>
               <p>
                 <label htmlFor="region">Region</label>
@@ -80,6 +79,7 @@ export class Profile extends React.Component {
                 />
               </p>
             </fieldset>
+            <input type="submit" className="btn__submit" value="Save changes" />
             <fieldset className="press-kit">
               <legend>Press kit</legend>
               <p>
@@ -119,9 +119,11 @@ export class Profile extends React.Component {
                 />
               </p>
             </fieldset>
+            <input type="submit" className="btn__submit" value="Save changes" />
             <Recordings />
+            <input type="submit" className="btn__submit" value="Save changes" />
             <Photos />
-            <input type="submit" value="Save changes" />
+            <input type="submit" className="btn__submit" value="Save changes" />
           </form>
         </section>
       </div>
