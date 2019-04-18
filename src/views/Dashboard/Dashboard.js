@@ -5,7 +5,6 @@ import FilterPosts from "../../components/FilterPosts/FilterPosts";
 import PostsFeed from "../../components/PostsFeed/PostsFeed";
 import { fetchPosts } from "../../actions/posts";
 import { fetchUser } from "../../actions/users";
-import "./Dashboard.css";
 
 export class Dashboard extends React.Component {
   componentDidMount() {
