@@ -1,17 +1,68 @@
 /* General styles */
+@import url("https://fonts.googleapis.com/css?family=Patrick+Hand|Open+Sans|Roboto");
+
+:root {
+  --color-teal: rgb(20, 250, 173);
+  --color-pink: rgb(250, 75, 157);
+  --color-yellow: rgb(252, 225, 69);
+  --color-blue: rgb(92, 209, 224);
+  --color-grey: rgb(68, 68, 68);
+  --font-title: "Roboto", sans-serif;
+  --font-text: "Open Sans", sans-serif;
+  --font-special: "Patrick Hand", cursive;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-text);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-title);
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+fieldset {
+  border: none;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="number"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #aaa;
+}
 
 .hidden {
   display: none;
 }
 
-.inline-center {
-  text-align: center;
-}
-
-.block-center {
-  margin: 0 auto;
-}
-
-fieldset {
-  border: none;
+.btn__submit {
+  background-color: var(--color-teal);
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 3px 3px black;
+  color: black;
+  display: block;
+  font-family: var(--font-title);
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0 auto 5em auto;
+  padding: 1em 1.5em;
+  text-decoration: none;
+  width: fit-content;
 }

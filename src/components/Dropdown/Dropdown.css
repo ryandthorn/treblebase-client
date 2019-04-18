@@ -1,0 +1,28 @@
+.dropdown {
+  background: rgb(255, 255, 255);
+  border: 0;
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  right: -1.5rem;
+  top: 4.7rem;
+  width: 30vw;
+}
+.dropdown a {
+  display: inline-block;
+  padding: 1em;
+}
+
+.dropdown label {
+  cursor: pointer;
+}
+
+.toggle-menu {
+  display: none;
+}
+
+.toggle-menu:checked + .dropdown {
+  border: 2px solid black;
+  border-top: 0;
+  height: fit-content;
+}

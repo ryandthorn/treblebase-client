@@ -1,0 +1,46 @@
+.profile a {
+  color: black;
+  text-decoration: none;
+}
+
+.profile legend {
+  background-color: var(--color-blue);
+  border: 1px solid black;
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 0.25em 0.5em;
+  text-align: center;
+}
+
+.profile input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  padding: 0.5rem 0.75rem;
+}
+
+.wrap__edit-profile {
+  padding: 1rem 0.5rem;
+}
+
+.profile p label {
+  display: inline-block;
+}
+
+.wrap__edit-profile h1 {
+  text-align: center;
+}
+
+.form__edit-profile fieldset {
+  border-radius: 10px;
+  border: 1px solid var(--color-grey);
+  margin: 2rem auto;
+}
+
+.form__edit-profile select {
+  border: 1px solid #aaa;
+  display: inline-block;
+  margin: 8px 0;
+  padding: 12px 20px;
+  width: 100%;
+}
