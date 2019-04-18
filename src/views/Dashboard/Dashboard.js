@@ -7,7 +7,7 @@ import { fetchPosts } from "../../actions/posts";
 import { fetchUser } from "../../actions/users";
 
 export class Dashboard extends React.Component {
-  componentDidMount() {
+  render() {
     const jwt = localStorage.getItem("jwt");
     if (!jwt) {
       return <Redirect to="/login" />;
@@ -16,9 +16,6 @@ export class Dashboard extends React.Component {
       this.props.dispatch(fetchUser());
       this.props.dispatch(fetchPosts());
     }
-  }
-
-  render() {
     return (
       <div className="dashboard">
         <FilterPosts />
