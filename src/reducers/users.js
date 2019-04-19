@@ -20,7 +20,6 @@ const initialState = {
 };
 
 const usersReducer = (state = initialState, action) => {
-  // console.log("usersReducer", { state, action });
   switch (action.type) {
     case USER_REGISTRATION:
       return { ...state, registeringUser: true };

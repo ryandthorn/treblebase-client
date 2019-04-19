@@ -23,7 +23,7 @@ export const fetchUser = () => dispatch => {
       Authorization: `Bearer ${jwt}`
     })
   };
-  fetch(`${API_BASE_URL}/users`, auth)
+  return fetch(`${API_BASE_URL}/users`, auth)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
@@ -33,10 +33,7 @@ export const fetchUser = () => dispatch => {
     .then(user => {
       dispatch(fetchUserSuccess(user));
     })
-    .catch(err => {
-      console.error(err);
-      dispatch(fetchUserFailure(err));
-    });
+    .catch(err => dispatch(fetchUserFailure(err)));
 };
 export const fetchUserSuccess = user => ({
   type: FETCH_USER_SUCCESS,
@@ -53,7 +50,7 @@ export const userLogin = userInfo => dispatch => {
     email: userInfo.email,
     password: userInfo.password
   });
-  fetch(`${API_BASE_URL}/auth/login`, {
+  return fetch(`${API_BASE_URL}/auth/login`, {
     method: "POST",
     body: data,
     headers: { "Content-Type": "application/json" }
@@ -68,10 +65,7 @@ export const userLogin = userInfo => dispatch => {
       dispatch(fetchUser());
       dispatch(userLoginSuccess(resJson.authToken));
     })
-    .catch(err => {
-      console.error(err);
-      dispatch(userLoginFailure(err));
-    });
+    .catch(err => dispatch(userLoginFailure(err)));
 };
 
 export const userLoginSuccess = jwt => ({
@@ -103,10 +97,7 @@ export const userRegistration = userInfo => dispatch => {
         userLogin({ email: userInfo.email, password: userInfo.password })
       );
     })
-    .catch(err => {
-      console.error(err);
-      dispatch(userRegistrationFailure(err));
-    });
+    .catch(err => dispatch(userRegistrationFailure(err)));
 };
 
 export const userRegistrationSuccess = userInfo => ({
@@ -155,21 +146,15 @@ export const editProfile = formData => dispatch => {
     }),
     body: JSON.stringify(payload)
   };
-  fetch(`${API_BASE_URL}/users`, auth)
+  return fetch(`${API_BASE_URL}/users`, auth)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
       return res.json();
     })
-    .then(updatedUser => {
-      console.log({ updatedUser });
-      dispatch(editProfileSuccess(updatedUser));
-    })
-    .catch(err => {
-      console.error(err);
-      dispatch(editProfileFailure(err));
-    });
+    .then(updatedUser => dispatch(editProfileSuccess(updatedUser)))
+    .catch(err => dispatch(editProfileFailure(err)));
 };
 
 export const editProfileSuccess = updatedUser => ({

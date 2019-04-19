@@ -19,7 +19,7 @@ export const fetchPosts = () => dispatch => {
       Authorization: `Bearer ${jwt}`
     })
   };
-  fetch(`${API_BASE_URL}/posts/`, auth)
+  return fetch(`${API_BASE_URL}/posts/`, auth)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
@@ -29,10 +29,7 @@ export const fetchPosts = () => dispatch => {
     .then(resJson => {
       dispatch(fetchPostsSuccess(resJson));
     })
-    .catch(err => {
-      console.error(err);
-      dispatch(fetchPostsFailure(err));
-    });
+    .catch(err => dispatch(fetchPostsFailure(err)));
 };
 
 export const fetchPostsSuccess = resJson => ({
@@ -76,24 +73,21 @@ export const applyToPost = (formData, postID) => dispatch => {
     body: JSON.stringify({ applicant: payload })
   };
 
-  fetch(`${API_BASE_URL}/posts/apply/${postID}`, options)
+  return fetch(`${API_BASE_URL}/posts/apply/${postID}`, options)
     .then(res => {
       if (!res.ok) {
         return Promise.reject(res.statusText);
       }
       dispatch(applyToPostSuccess());
     })
-    .catch(err => {
-      console.error(err);
-      dispatch(applyToPostFailure(err));
-    });
+    .catch(err => dispatch(applyToPostFailure(err)));
 };
 
 export const applyToPostSuccess = () => ({
   type: APPLY_TO_POST_SUCCESS
-})
+});
 
 export const applyToPostFailure = err => ({
   type: APPLY_TO_POST_FAILURE,
   err
-})
+});

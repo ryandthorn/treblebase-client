@@ -17,11 +17,6 @@
 }
 
 .Link__details {
-  /* background-color: var(--color-pink);
-  font-size: 20px;
-  font-weight: bold;
-  margin-top: .5rem;
-  padding: 1em 1.5em; */
   background-color: var(--color-pink);
   border: 1px solid black;
   border-radius: 5px;

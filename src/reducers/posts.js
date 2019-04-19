@@ -16,7 +16,6 @@ const initialState = {
 };
 
 const postsReducer = (state = initialState, action) => {
-  console.log("postsReducer", { state, action });
   switch (action.type) {
     case FILTER_POSTS_REGION:
       return { ...state, region: action.region };
