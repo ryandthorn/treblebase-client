@@ -3,5 +3,6 @@ import { shallow } from "enzyme";
 import { Dashboard } from "./Dashboard";
 
 it("renders without crashing", () => {
-  shallow(<Dashboard />, { disableLifecycleMethods: true });
+  const wrapper = shallow(<Dashboard />);
+  expect(wrapper.length).toEqual(1);
 });
