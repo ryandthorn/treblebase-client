@@ -5,6 +5,16 @@
   width: 80%;
 }
 
+#searchLabel {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+#searchLabel img {
+  width: 40px;
+}
+
 .filter-posts {
   border: 1px solid #aaa;
   border-radius: 10px;

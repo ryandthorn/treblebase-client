@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import SelectRegion from "../SelectRegion/SelectRegion";
 import { filterPostsSearch, filterPostsStatus } from "../../actions/posts";
 import "./FilterPosts.css";
+import logo from "../../views/Landing/logo.jpg";
 
 export class FilterPosts extends React.Component {
   handleSearchSubmit(e) {
@@ -21,6 +22,9 @@ export class FilterPosts extends React.Component {
           <fieldset>
             <legend>Search TrebleBase</legend>
             <div className="wrap__search">
+              <label htmlFor="search" id="searchLabel" aria-label="Search">
+                <img src={logo} alt="" />
+              </label>
               <input
                 type="search"
                 id="search"
@@ -39,7 +43,7 @@ export class FilterPosts extends React.Component {
               <SelectRegion />
             </div>
             <div className="filter-field">
-              <label htmlFor="open">Accepting applications</label>
+              <label htmlFor="openStatus">Accepting applications</label>
               <select
                 id="openStatus"
                 name="openStatus"
