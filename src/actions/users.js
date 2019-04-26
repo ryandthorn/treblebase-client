@@ -8,6 +8,8 @@ export const USER_LOGIN = "USER_LOGIN";
 export const USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
 export const USER_LOGIN_FAILURE = "USER_LOGIN_FAILURE";
 
+export const USER_LOGOUT = "USER_LOGOUT";
+
 export const USER_REGISTRATION = "USER_REGISTRATION";
 export const USER_REGISTRATION_SUCCESS = "USER_REGISTRATION_SUCCESS";
 export const USER_REGISTRATION_FAILURE = "USER_REGISTRATION_FAILURE";
@@ -15,6 +17,10 @@ export const USER_REGISTRATION_FAILURE = "USER_REGISTRATION_FAILURE";
 export const EDIT_PROFILE = "EDIT_PROFILE";
 export const EDIT_PROFILE_SUCCESS = "EDIT_PROFILE_SUCCESS";
 export const EDIT_PROFILE_FAILURE = "EDIT_PROFILE_FAILURE";
+
+export const userLogout = () => ({
+  type: USER_LOGOUT
+});
 
 export const fetchUser = () => dispatch => {
   const jwt = localStorage.getItem("jwt");
@@ -62,8 +68,8 @@ export const userLogin = userInfo => dispatch => {
       return res.json();
     })
     .then(resJson => {
-      dispatch(fetchUser());
       dispatch(userLoginSuccess(resJson.authToken));
+      dispatch(fetchUser());
     })
     .catch(err => dispatch(userLoginFailure(err)));
 };

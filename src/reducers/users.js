@@ -8,7 +8,8 @@ import {
   EDIT_PROFILE_FAILURE,
   USER_REGISTRATION,
   USER_REGISTRATION_SUCCESS,
-  USER_REGISTRATION_FAILURE
+  USER_REGISTRATION_FAILURE,
+  USER_LOGOUT
 } from "../actions/users";
 
 const initialState = {
@@ -27,6 +28,8 @@ const usersReducer = (state = initialState, action) => {
       return { ...state, user: action.user, registeringUser: false };
     case USER_REGISTRATION_FAILURE:
       return { ...state, registeringUser: false };
+    case USER_LOGOUT:
+      return { ...state, loggedIn: false };
     case FETCH_USER:
       return { ...state, fetchingUser: true };
     case FETCH_USER_SUCCESS:

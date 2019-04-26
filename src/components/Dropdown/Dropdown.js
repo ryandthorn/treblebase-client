@@ -1,10 +1,13 @@
 import React from "react";
 import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import { userLogout } from "../../actions/users";
 import "./Dropdown.css";
 
-export default class Dropdown extends React.Component {
+export class Dropdown extends React.Component {
   handleLogout() {
     localStorage.clear();
+    this.props.dispatch(userLogout());
     return <Redirect to="/" />;
   }
   render() {
@@ -17,3 +20,9 @@ export default class Dropdown extends React.Component {
     );
   }
 }
+
+const mapStateToProps = state => ({
+  users: state.users
+});
+
+export default connect(mapStateToProps)(Dropdown);
