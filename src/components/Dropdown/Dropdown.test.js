@@ -2,8 +2,8 @@ import React from "react";
 import { shallow } from "enzyme";
 import Dropdown from "./Dropdown";
 
-const setUp = (props = {}) => {
-  const component = shallow(<Dropdown {...props} />);
+const setUp = () => {
+  const component = shallow(<Dropdown />);
   return component;
 };
 
@@ -14,11 +14,7 @@ describe("Dropdown", () => {
   });
 
   it("renders without crashing", () => {
-    const wrapper = component.find("nav");
-    expect(wrapper.length).toBe(1);
-  });
-  it("should render a Link", () => {
-    const wrapper = component.find("Link");
+    const wrapper = component;
     expect(wrapper.length).toBe(1);
   });
 });

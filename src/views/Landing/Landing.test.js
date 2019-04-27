@@ -1,14 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { MemoryRouter } from "react-router";
+import { shallow } from "enzyme";
 import Landing from "./Landing";
 
-it("renders without crashing", () => {
-  const div = document.createElement("div");
-  ReactDOM.render(
-    <MemoryRouter>
-      <Landing />
-    </MemoryRouter>,
-    div
-  );
+const setUp = () => {
+  const component = shallow(<Landing />);
+  return component;
+};
+
+describe("Landing", () => {
+  let component;
+  beforeEach(() => {
+    component = setUp();
+  });
+
+  it("renders without crashing", () => {
+    const wrapper = component;
+    expect(wrapper.length).toBe(1);
+  });
 });
