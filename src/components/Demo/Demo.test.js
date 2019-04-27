@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Registration from "./Registration";
+import Demo from "./index";
 
-describe("Registration", () => {
+describe("Demo", () => {
   it("renders without crashing", () => {
-    const wrapper = shallow(<Registration />);
+    const wrapper = shallow(<Demo />);
     expect(wrapper.length).toEqual(1);
   });
 });

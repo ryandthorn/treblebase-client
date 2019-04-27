@@ -1,7 +1,10 @@
 import React from "react";
-import { Profile } from "./Profile";
 import { shallow } from "enzyme";
+import Profile from "./Profile";
 
-it("renders without crashing", () => {
-  shallow(<Profile />, { disableLifecycleMethods: true });
+describe("Profile", () => {
+  it("renders without crashing", () => {
+    const wrapper = shallow(<Profile />);
+    expect(wrapper.length).toEqual(1);
+  });
 });

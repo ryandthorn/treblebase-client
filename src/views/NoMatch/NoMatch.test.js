@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Registration from "./Registration";
+import NoMatch from "./NoMatch";
 
-describe("Registration", () => {
+describe("NoMatch", () => {
   it("renders without crashing", () => {
-    const wrapper = shallow(<Registration />);
+    const wrapper = shallow(<NoMatch match={{ url: "#" }} />);
     expect(wrapper.length).toEqual(1);
   });
 });

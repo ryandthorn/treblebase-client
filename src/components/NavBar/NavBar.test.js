@@ -1,10 +1,10 @@
 import React from "react";
 import { shallow } from "enzyme";
-import Registration from "./Registration";
+import NavBar from "./NavBar";
 
-describe("Registration", () => {
+describe("NavBar", () => {
   it("renders without crashing", () => {
-    const wrapper = shallow(<Registration />);
+    const wrapper = shallow(<NavBar />);
     expect(wrapper.length).toEqual(1);
   });
 });
