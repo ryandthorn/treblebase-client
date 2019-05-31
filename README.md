@@ -3,6 +3,9 @@
 Check it out:
 https://treblebase-client.herokuapp.com/
 
+Server repo:
+https://github.com/ryandthorn/treblebase-server
+
 ---
 
 ## Screenshots
